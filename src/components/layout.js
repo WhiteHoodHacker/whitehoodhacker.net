@@ -7,9 +7,7 @@ export default function Layout({ children }) {
         <span>
             <Navigation />
             <AnimatePresence initial={true} exitBeforeEnter>
-                <span>
-                    {children}
-                </span>
+                {children}
             </AnimatePresence>
         </span>
     )
