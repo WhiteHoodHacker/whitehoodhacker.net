@@ -25,12 +25,6 @@ module.exports = {
             }
         },
         {
-            resolve: `gatsby-plugin-layout`,
-            options: {
-                component: require.resolve(`./src/components/layout`),
-            },
-        },
-        {
             resolve: `gatsby-plugin-sharp`,
             options: {
                 defaults: {
