@@ -53,7 +53,7 @@ const Seo = ({ title, description, image, twitter, lang, meta }) => {
             link = {[
                 { rel: "preload", as: "font", href: "/fonts/inconsolata-latin-variable-wghtOnly-normal.woff2", type: "font/woff2", crossorigin: "anonymous" },
                 { rel: "icon", type: "image/x-icon", sizes: "48x48", href: "/favicon.ico" },
-                { rel: "apple-touch-icon", type: "image/png", sizes: "180x180", href: "/icon196.png" }, 
+                { rel: "apple-touch-icon", type: "image/png", sizes: "180x180", href: "/icon180.png" }, 
             ]}
         />
     )

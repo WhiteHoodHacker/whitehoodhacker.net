@@ -9,7 +9,7 @@ module.exports = {
             name: `WhiteHoodHacker`,
         },
         siteUrl: `https://whitehoodhacker.net`, // Do not put trailing slash
-        image: `https://raw.githubusercontent.com/WhiteHoodHacker/whitehoodhacker/master/img/icon256.png`,
+        image: `https://whitehoodhacker.net/icon256.png`,
     },
     plugins: [
         `gatsby-plugin-dark-mode`,
