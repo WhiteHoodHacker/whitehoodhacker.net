@@ -1,0 +1,472 @@
+:root {
+    --color-background: #f8f9fa;
+    --color-background-inverse: #111111;
+    --color-surface: #eeeeee;
+    --color-text: #000000;
+    --color-title: #000000;
+    --color-title-inverse: #dddddd;
+    --color-primary: #0080ff;
+    --color-secondary: #32bbff;
+    --hr: hsla(0, 0%, 0%, 0.2);
+}
+.dark {
+    -webkit-font-smoothing: antialiased;
+    --color-background: #111111;
+    --color-background-inverse: #f8f9fa;
+    --color-surface: #222222;
+    --color-text: rgba(238, 238, 238, 0.88);
+    --color-title: #dddddd;
+    --color-title-inverse: #000000;
+    --color-primary: #0acc74;
+    --color-secondary: #118a53;
+    --hr: hsla(0, 0%, 100%, 0.2);
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Inconsolata, Consolas, 'Courier New';
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+.main-surface {
+    background-color: var(--color-surface);
+}
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5,
+.main-color-title {
+    color: var(--color-title);
+}
+.main-color-surface {
+    background-color: var(--color-surface)
+}
+a {
+    color: var(--color-primary) !important;
+    transition: none!important;
+}
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:active { text-decoration: none; }
+.main-btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-title-inverse);
+}
+.main-social-svg {
+    fill: var(--color-primary);
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+@media (hover: hover) {
+    a:hover {
+        color: var(--color-secondary) !important;
+        text-decoration: none;
+    }
+    .main-btn-primary:hover {
+        background-color: var(--color-secondary);
+        border-color: var(--color-secondary);
+        color: var(--color-title-inverse);
+    }
+    .main-social-svg:hover {
+        fill: var(--color-secondary);
+    }
+}
+@media (hover: none) {
+    a:active {
+        color: var(--color-secondary) !important;
+        text-decoration: none;
+    }
+    .main-btn-primary:active {
+        background-color: var(--color-secondary);
+        border-color: var(--color-secondary);
+        color: var(--color-title-inverse);
+    }
+    .main-social-svg:active {
+        fill: var(--color-secondary);
+    }
+    .main-icon-shadow:active {
+        color: transparent;
+        text-shadow: 0 0 var(--color-secondary);
+    }
+}
+/* Use variable font if the browser is modern */
+@supports (font-variation-settings: normal) {
+    html, body {
+        font-family: 'Inconsolata Variable Weight', Consolas, 'Courier New';
+    }
+}
+html {
+    font-size: 1rem;
+}
+@media (min-width: 1200px) {
+    html {
+        font-size: 1.2rem;
+    }
+    /* Temporarily disable xxl breakpoint */
+    .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1140px !important;
+    }
+}
+.main-rounded-start-lg {
+    border-bottom-left-radius: 0.5rem !important;
+    border-bottom-right-radius: 0.5rem !important;
+}
+.main-rounded-end-lg {
+    border-bottom-left-radius: 0.5rem !important;
+    border-bottom-right-radius: 0.5rem !important;
+}
+@media (min-width: 768px) {
+    .main-rounded-start-lg {
+        border-bottom-left-radius: 0rem !important;
+        border-bottom-right-radius: 0rem !important;
+        border-top-left-radius: 0rem !important;
+    }
+    .main-rounded-end-lg {
+        border-bottom-left-radius: 0rem !important;
+        border-bottom-right-radius: 0rem !important;
+        border-top-right-radius: 0rem !important;
+    }
+}
+@media (min-width: 992px) {
+    .main-rounded-start-lg {
+        border-bottom-left-radius: 0.5rem !important;
+        border-bottom-right-radius: 0rem !important;
+        border-top-left-radius: 0.5rem !important;
+    }
+    .main-rounded-end-lg {
+        border-bottom-left-radius: 0rem !important;
+        border-bottom-right-radius: 0.5rem !important;
+        border-top-right-radius: 0.5rem !important;
+    }
+}
+#dark-toggle {
+    display: none;
+}
+.main-top-tooltip,
+.main-bottom-tooltip {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+.main-top-tooltip .main-top-tooltip-text,
+.main-bottom-tooltip .main-bottom-tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--color-background-inverse);
+    color: var(--color-title-inverse);
+    text-align: center;
+    padding: 5px 0 !important;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 99;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-size: 0.8rem;
+}
+.main-top-tooltip .main-top-tooltip-text {
+    bottom: calc(80% + 1.5em);
+    left: 50%;
+}
+.main-bottom-tooltip .main-bottom-tooltip-text {
+    top: calc(80% + 1.5em);
+    left: 50%;
+}
+.main-top-tooltip .main-top-tooltip-text::after,
+.main-bottom-tooltip .main-bottom-tooltip-text::after {
+    content: "";
+    position: absolute;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+}
+.main-top-tooltip .main-top-tooltip-text::after {
+    top: 100%;
+    left: 50%;
+    border-color: var(--color-background-inverse) transparent transparent transparent;
+}
+.main-bottom-tooltip .main-bottom-tooltip-text::after {
+    bottom: 100%;
+    left: 50%;
+    border-color: transparent transparent var(--color-background-inverse) transparent;
+}
+.main-top-tooltip:hover .main-top-tooltip-text,
+.main-bottom-tooltip:hover .main-bottom-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+.main-button-to-link {
+    font-size: 1em;
+    text-align: left;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    line-height: var(--bs-body-line-height)
+}
+.main-btn-primary:focus {
+    box-shadow: none;
+}
+.main-navbar {
+    color: var(--color-text);
+    z-index: 98;
+}
+.main-page {
+    position: absolute;
+    top:0; left: 0; right: 0; bottom: 0;
+}
+.main-fit-element {
+    height: auto;
+    width: 100%;
+}
+.main-circle {
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.main-badge {
+    height: auto;
+    width: auto;
+}
+.main-mh-100 {
+    min-height: 100%;
+}
+.main-active {
+    background-position: 100% 0;
+}
+.main-box {
+    border: 1px solid #696969;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 5px 0px #808080;
+}
+.main-frc-banner {
+    background: #0f4bcb;
+    color: white;
+    display: inline-block;
+    height: 170px;
+    width: 140px;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    margin: 0 5px 40px 5px;
+    padding: 8px;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    white-space: normal;
+}
+.main-frc-banner::after {
+    content: '';
+    position: absolute;
+    display: block;
+    border: 70px solid #0f4bcb;
+    border-top-width: 5px;
+    border-bottom: 20px transparent solid;
+    top: 100%;
+    left: 0;
+}
+.main-frc-banner,
+.main-frc-banner::after {
+    -webkit-filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+}
+.main-frc-banner img {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 75px;
+    max-height: 45px;
+}
+.main-frc-banner .main-award-name {
+    display: table;
+    width: 100%;
+    height: 35px;
+    font-weight: bolder;
+    margin: 0;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+.main-frc-banner .main-event-name,
+.main-frc-banner .main-event-name-long {
+    display: table;
+    text-transform: uppercase;
+    height: 50px;
+    width: 100%;
+}
+.main-frc-banner .main-event-name-long {
+    font-size: 75%;
+    line-height: 110%;
+}
+.main-fade-in-animation {
+    -webkit-animation: fadeIn 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0.5s both;
+    animation: fadeIn 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0.5s both;
+}
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+/* Text reveal animation */
+.main-reveal-text,
+.main-reveal-text::after,
+.main-reveal-text-reverse,
+.main-reveal-text-reverse::after {
+	-webkit-animation-delay: var(--animation-delay, 0.2s);
+	        animation-delay: var(--animation-delay, 0.2s);
+	-webkit-animation-iteration-count: var(--iterations, 1);
+	        animation-iteration-count: var(--iterations, 1);
+	-webkit-animation-duration: var(--duration, 0.8s);
+	        animation-duration: var(--duration, 0.8s);
+	-webkit-animation-fill-mode: backwards;
+	        animation-fill-mode: backwards;
+	-webkit-animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+	        animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+.main-reveal-text-short,
+.main-reveal-text-short::after {
+	-webkit-animation-delay: var(--animation-delay, 0.2s);
+	        animation-delay: var(--animation-delay, 0.2s);
+	-webkit-animation-iteration-count: var(--iterations, 1);
+	        animation-iteration-count: var(--iterations, 1);
+	-webkit-animation-duration: var(--duration, 0.6s);
+	        animation-duration: var(--duration, 0.6s);
+	-webkit-animation-fill-mode: backwards;
+	        animation-fill-mode: backwards;
+	-webkit-animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+	        animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+.main-reveal-text,
+.main-reveal-text-short {
+	position: relative;
+	-webkit-animation-name: clip-text;
+	        animation-name: clip-text;
+}
+.main-reveal-text-reverse {
+	position: relative;
+	-webkit-animation-name: clip-text-reverse;
+	        animation-name: clip-text-reverse;
+}
+/* Text reveal ::after */
+.main-reveal-text::after,
+.main-reveal-text-reverse::after,
+.main-reveal-text-short::after {
+    content: "";
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-primary);
+    pointer-events: none;
+}
+.main-reveal-text::after,
+.main-reveal-text-short::after {
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    -webkit-animation-name: text-revealer;
+            animation-name: text-revealer;
+}
+.main-reveal-text-reverse::after {
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+    -webkit-animation-name: text-revealer-reverse;
+            animation-name: text-revealer-reverse;
+}
+/* Keyframes for text reveal animation */
+@-webkit-keyframes clip-text {
+	from {
+		-webkit-clip-path: inset(0 100% 0 0);
+		        clip-path: inset(0 100% 0 0);
+	}
+	to {
+		-webkit-clip-path: inset(0 0 0 0);
+		        clip-path: inset(0 0 0 0);
+	}
+}
+@keyframes clip-text {
+	from {
+		-webkit-clip-path: inset(0 100% 0 0);
+		        clip-path: inset(0 100% 0 0);
+	}
+	to {
+		-webkit-clip-path: inset(0 0 0 0);
+		        clip-path: inset(0 0 0 0);
+	}
+}
+@-webkit-keyframes text-revealer {
+	0%, 50% {transform-origin: 0 50%;}
+	60%, 100% {transform-origin: 100% 50%;}
+	60% {transform: scaleX(1);}
+	100% {transform: scaleX(0);}
+}
+@keyframes text-revealer {
+	0%, 50% {transform-origin: 0 50%;}
+	60%, 100% {transform-origin: 100% 50%;}
+	60% {transform: scaleX(1);}
+	100% {transform: scaleX(0);}
+}
+@-webkit-keyframes clip-text-reverse {
+	from {
+		-webkit-clip-path: inset(0 0 0 100%);
+		        clip-path: inset(0 0 0 100%);
+	}
+	to {
+		-webkit-clip-path: inset(0 0 0 0);
+		        clip-path: inset(0 0 0 0);
+	}
+}
+@keyframes clip-text-reverse {
+	from {
+		-webkit-clip-path: inset(0 0 0 100%);
+		        clip-path: inset(0 0 0 100%);
+	}
+	to {
+		-webkit-clip-path: inset(0 0 0 0);
+		        clip-path: inset(0 0 0 0);
+	}
+}
+@-webkit-keyframes text-revealer-reverse {
+	0%, 50% {transform-origin: 100% 50%;}
+	60%, 100% {transform-origin: 0 50%;}
+	60% {transform: scaleX(1);}
+	100% {transform: scaleX(0);}
+}
+@keyframes text-revealer-reverse {
+	0%, 50% {transform-origin: 100% 50%;}
+	60%, 100% {transform-origin: 0 50%;}
+	60% {transform: scaleX(1);}
+	100% {transform: scaleX(0);}
+}
+
+/* Change null to * for debugging */
+null {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+}

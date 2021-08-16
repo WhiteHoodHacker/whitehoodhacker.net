@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://whitehoodhacker.net/sitemap/sitemap-index.xml
+
+User-agent: nsa
+Disallow: /
