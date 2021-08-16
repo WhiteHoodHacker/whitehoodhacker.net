@@ -1,6 +1,8 @@
 # WhiteHoodHacker's Website
 
-[https://whitehoodhacker.net](https://whitehoodhacker.net).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/435dc3cb-ac8a-4133-ba93-4c810b7fb939/deploy-status)](https://app.netlify.com/sites/whitehoodhacker/deploys)
+
+[https://whitehoodhacker.net](https://whitehoodhacker.net)
 
 This website uses GatsbyJS, a static site generator based on the ReactJS framework. I chose GatsbyJS because it offered the flexibility of React without sacrificing speed and SEO.
 
