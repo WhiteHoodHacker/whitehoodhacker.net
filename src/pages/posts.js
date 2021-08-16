@@ -128,11 +128,7 @@ const PostsIndex = ({ data, location }) => {
                                                     transition={{ ease: "circOut", duration: (indexClicked === post.fields.slug ? 0.2 : 0.0) }}
                                                     style={{ marginTop: "1em" }}
                                                 >
-                                                    <motion.div
-                                                        initial={{ opacity: 0 }}
-                                                        animate={{ opacity: 1 }}
-                                                        transition={{ ease: "circOut", duration: 0.5, delay: 0.5 }}
-                                                    >
+                                                    <div className="main-fade-in-animation">
                                                         <small>{post.frontmatter.date} &#8226; {post.timeToRead} min read</small>
                                                         <p
                                                             dangerouslySetInnerHTML={{
@@ -140,7 +136,7 @@ const PostsIndex = ({ data, location }) => {
                                                             }}
                                                             itemProp="description"
                                                         />
-                                                    </motion.div>
+                                                    </div>
                                                 </motion.section>
                                             </article>
                                         </li>

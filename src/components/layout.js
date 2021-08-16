@@ -1,13 +1,14 @@
 import React from "react"
+import { AnimatePresence } from "framer-motion"
 import Navigation from "./navigation"
 
 export default function Layout({ children }) {
     return (
         <span>
             <Navigation />
-            <span>
+            <AnimatePresence initial={true} exitBeforeEnter>
                 {children}
-            </span>
+            </AnimatePresence>
         </span>
     )
 }

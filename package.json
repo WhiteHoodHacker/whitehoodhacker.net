@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "whitehoodhacker.net",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
-  "license": "0BSD",
+  "description": "WhiteHoodHacker's personal website and blog",
+  "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -21,6 +21,7 @@
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-feed": "^3.7.1",
     "gatsby-plugin-image": "^1.7.1",
+    "gatsby-plugin-layout": "^2.11.0",
     "gatsby-plugin-netlify": "^3.7.1",
     "gatsby-plugin-react-helmet": "^4.7.1",
     "gatsby-plugin-sharp": "^3.7.1",
@@ -52,9 +53,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/WhiteHoodHacker/whitehoodhacker.net"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/WhiteHoodHacker/whitehoodhacker.net/issues"
   }
 }

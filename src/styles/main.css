@@ -323,6 +323,14 @@ html {
     -webkit-animation: fadeIn 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0.5s both;
     animation: fadeIn 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0.5s both;
 }
+.main-fade-in-animation-delay-1 {
+    -webkit-animation: fadeIn 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0.7s both;
+    animation: fadeIn 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0.7s both;
+}
+.main-fade-in-animation-delay-2 {
+    -webkit-animation: fadeIn 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1.25s both;
+    animation: fadeIn 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1.25s both;
+}
 @-webkit-keyframes fadeIn {
     0% {opacity: 0;}
     100% {opacity: 1;}

@@ -1,5 +1,4 @@
 import React from "react"
-import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -21,34 +20,22 @@ class Home extends React.Component {
                         <div className="row h-50 justify-content-center">
                             <div className="col-lg-7 col-md-6">
                                 <h1 className="main-reveal-text-short">Hi, I'm Minh.<br />I do cybersecurity.</h1>
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ ease: "circOut", duration: 0.5, delay: 0.5 }}
-                                >
+                                <div className="main-fade-in-animation">
                                     <p>I am an 18 year old security researcher studying computer science at University of Illinois Urbana-Champaign.</p>
                                     <p>In my free time, I play CTFs and code random things.</p>
-                                </motion.div>
+                                </div>
                             </div>
                             <div className="col-lg-3 col-md-4 col-sm-7 col-8">
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ ease: "circOut", duration: 0.5, delay: 0.7 }}
-                                >
+                                <div className="main-fade-in-animation-delay-1">
                                     <StaticImage width={300} height={300} className="main-fit-element main-circle" src="../img/portrait512.jpg" alt="Portrait" />
-                                </motion.div>
+                                </div>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-md-6 offset-md-1">
-                                <motion.div
-                                    initial={{ opacity: 0, visibility: "hidden" }}
-                                    animate={{ opacity: 1, visibility: "visible" }}
-                                    transition={{ ease: "circOut", duration: 0.7, delay: 1.25 }}
-                                >
+                                <div className="main-fade-in-animation-delay-2">
                                     <LatestPost />
-                                </motion.div>
+                                </div>
                             </div>
                         </div>
                     </div>

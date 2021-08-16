@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import { motion } from "framer-motion"
 
 import Footer from "../components/footer"
 import NavigationSpacer from "../components/navigation-spacer"
@@ -28,23 +27,18 @@ const PostTemplate = ({ data, location }) => {
                             <PostSidebar shareUrl={postUrl} />
                         </div>
                         <div className="col-md-10 col-xl-8">
-                            <motion.p
-                                className="m-0"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                            >
+                            <p className="m-0 main-fade-in-animation">
                                 <Link to="/posts"><strong>← ../</strong></Link>
-                            </motion.p>
+                            </p>
                             <article id="post-content" itemScope itemType="http://schema.org/Article">
                                 <header>
                                     <h1 itemProp="headline"><strong>{post.frontmatter.title}</strong></h1>
                                     <p className="main-reveal-text-short d-inline-block">{post.frontmatter.date} &#8226; {post.timeToRead} min read</p>
                                 </header>
-                                <motion.section
+                                <section
                                     dangerouslySetInnerHTML={{ __html: post.html }}
                                     itemProp="articleBody"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
+                                    className="main-fade-in-animation"
                                 />
                                 <hr />
                             </article>
