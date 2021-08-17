@@ -15,7 +15,7 @@ class Contact extends React.Component {
                     <div className="container flex-grow-1">
                         <div className="row justify-content-center">
                             <div className="col-md-10 col-xl-8">
-                                <h1 className="main-reveal-text-short">Contact</h1>
+                                <h1 className="main-reveal-text-short mt-0">Contact</h1>
                                 <div className="main-fade-in-animation">
                                     <p>You can send an email to "hello at whitehoodhacker dot net".</p>
                                     <p>If you want to communicate with encryption, use my <Link to="/WhiteHoodHacker.asc">PGP key</Link>.</p>
