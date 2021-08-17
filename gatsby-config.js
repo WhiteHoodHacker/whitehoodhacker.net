@@ -12,7 +12,6 @@ module.exports = {
         image: `https://whitehoodhacker.net/icon256.png`,
     },
     plugins: [
-        `gatsby-plugin-dark-mode`,
         `gatsby-plugin-image`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-slug`,
@@ -140,6 +139,14 @@ module.exports = {
                     ],
                 },
             },
+        },
+        {
+            resolve: `gatsby-plugin-use-dark-mode`,
+            options: {
+                classNameDark: `dark-mode`,
+                classNameLight: `light-mode`,
+                minify: true,
+            }
         },
     ],
 }

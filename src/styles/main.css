@@ -1,4 +1,5 @@
-:root {
+:root,
+.light-mode {
     --color-background: #f8f9fa;
     --color-background-inverse: #111111;
     --color-surface: #eeeeee;
@@ -9,7 +10,7 @@
     --color-secondary: #32bbff;
     --hr: hsla(0, 0%, 0%, 0.2);
 }
-.dark {
+.dark-mode {
     -webkit-font-smoothing: antialiased;
     --color-background: #111111;
     --color-background-inverse: #f8f9fa;
@@ -161,19 +162,19 @@ html {
 #main-sunglasses-icon {
     display: none;
 }
-body.dark #main-sunglasses-icon {
+body.dark-mode #main-sunglasses-icon {
     display: flex !important;
 }
 #main-sun-icon {
     display: flex;
 }
-body.dark #main-sun-icon {
+body.dark-mode #main-sun-icon {
     display: none !important;
 }
 #main-dark-mode-tooltip:after {
     content: "Dark mode";
 }
-body.dark #main-dark-mode-tooltip:after {
+body.dark-mode #main-dark-mode-tooltip:after {
     content: "Light mode" !important;
 }
 .main-top-tooltip,
