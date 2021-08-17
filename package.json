@@ -14,12 +14,15 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
     "bootstrap": "^5.1.0",
     "framer-motion": "^4.1.17",
     "gatsby": "^3.7.1",
     "gatsby-plugin-canonical-urls": "^3.11.0",
     "gatsby-plugin-feed": "^3.7.1",
     "gatsby-plugin-image": "^1.7.1",
+    "gatsby-plugin-mdx": "^2.11.0",
     "gatsby-plugin-netlify": "^3.7.1",
     "gatsby-plugin-react-helmet": "^4.7.1",
     "gatsby-plugin-sharp": "^3.7.1",
@@ -32,7 +35,6 @@
     "gatsby-remark-responsive-iframe": "^4.4.1",
     "gatsby-remark-smartypants": "^4.4.1",
     "gatsby-source-filesystem": "^3.7.1",
-    "gatsby-transformer-remark": "^4.4.1",
     "gatsby-transformer-sharp": "^3.7.1",
     "normalize.css": "^8.0.1",
     "prismjs": "^1.23.0",

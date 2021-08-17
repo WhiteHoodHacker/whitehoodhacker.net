@@ -1,5 +1,6 @@
-import * as React from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Footer from "../components/footer"
 import NavigationSpacer from "../components/navigation-spacer"
@@ -9,7 +10,7 @@ import Seo from "../components/seo"
 import ShareBanner from "../components/share-banner"
 
 const PostTemplate = ({ data, location }) => {
-    const post = data.markdownRemark
+    const post = data.mdx
     const { previous, next } = data
     const postUrl = data.site.siteMetadata.siteUrl + post.fields.slug
 
@@ -37,10 +38,11 @@ const PostTemplate = ({ data, location }) => {
                                     <p className="main-reveal-text-short d-inline-block">{post.frontmatter.date} &#8226; {post.timeToRead} min read</p>
                                 </header>
                                 <section
-                                    dangerouslySetInnerHTML={{ __html: post.html }}
                                     itemProp="articleBody"
                                     className="main-fade-in-animation"
-                                />
+                                >
+                                    <MDXRenderer>{post.body}</MDXRenderer>
+                                </section>
                                 <hr />
                             </article>
                         </div>
@@ -100,22 +102,21 @@ export const pageQuery = graphql`
                 siteUrl
             }
         }
-        markdownRemark(id: { eq: $id }) {
+        mdx(id: { eq: $id }) {
             id
             timeToRead
             excerpt(pruneLength: 160)
             fields {
                 slug
             }
-            html
             frontmatter {
                 title
                 date(formatString: "MMMM DD, YYYY")
                 description
-                image
             }
+            body
         }
-        previous: markdownRemark(id: { eq: $previousPostId }) {
+        previous: mdx(id: { eq: $previousPostId }) {
             fields {
                 slug
             }
@@ -123,7 +124,7 @@ export const pageQuery = graphql`
                 title
             }
         }
-        next: markdownRemark(id: { eq: $nextPostId }) {
+        next: mdx(id: { eq: $nextPostId }) {
             fields {
                 slug
             }

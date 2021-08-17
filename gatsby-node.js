@@ -29,14 +29,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const result = await graphql(
         `
             {
-                allMarkdownRemark(
+                allMdx(
                     sort: { fields: [frontmatter___date], order: ASC }
                     limit: 1000
                 ) {
-                    nodes {
-                        id
-                        fields {
-                            slug
+                    edges {
+                        node {
+                            id
+                            fields {
+                                slug
+                            }
+                            frontmatter {
+                                title
+                            }
                         }
                     }
                 }
@@ -52,7 +57,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         return
     }
 
-    const posts = result.data.allMarkdownRemark.nodes
+    const posts = result.data.allMdx.edges
 
     // Create blog posts pages
     // But only if there's at least one markdown file found at "content/posts" (defined in gatsby-config.js)
@@ -60,14 +65,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     if (posts.length > 0) {
         posts.forEach((post, index) => {
-            const previousPostId = index === 0 ? null : posts[index - 1].id
-            const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+            const previousPostId = index === 0 ? null : posts[index - 1].node.id
+            const nextPostId = index === posts.length - 1 ? null : posts[index + 1].node.id
 
             createPage({
-                path: post.fields.slug,
+                path: post.node.fields.slug,
                 component: blogPost,
                 context: {
-                    id: post.id,
+                    id: post.node.id,
                     previousPostId,
                     nextPostId,
                 },
@@ -83,7 +88,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     // This way those will always be defined even if removed from gatsby-config.js
 
     // Also explicitly define the Markdown frontmatter
-    // This way the "MarkdownRemark" queries will return `null` even when no
+    // This way the "mdx" queries will return `null` even when no
     // blog posts are stored inside "content/posts" instead of returning an error
     createTypes(`
         type SiteSiteMetadata {
@@ -101,10 +106,13 @@ exports.createSchemaCustomization = ({ actions }) => {
             twitter: String
         }
 
-        type MarkdownRemark implements Node {
-            timeToRead: String
-            frontmatter: Frontmatter
+        type Mdx implements Node {
             fields: Fields
+            frontmatter: Frontmatter
+        }
+
+        type Fields {
+            slug: String
         }
 
         type Frontmatter {
@@ -112,10 +120,6 @@ exports.createSchemaCustomization = ({ actions }) => {
             description: String
             image: String
             date: Date @dateformat
-        }
-
-        type Fields {
-            slug: String
         }
     `)
 }

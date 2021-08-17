@@ -35,7 +35,7 @@ const variants = {
 }
 
 const PostsIndex = ({ data, location }) => {
-    const posts = data.allMarkdownRemark.nodes
+    const posts = data.allMdx.nodes
     const [indexClicked, setIndexClicked] = React.useState(null)
 
     if (location != null && location.state != null && location.state.slug != null) {
@@ -130,12 +130,7 @@ const PostsIndex = ({ data, location }) => {
                                                 >
                                                     <div className="main-fade-in-animation">
                                                         <small>{post.frontmatter.date} &#8226; {post.timeToRead} min read</small>
-                                                        <p
-                                                            dangerouslySetInnerHTML={{
-                                                                __html: post.frontmatter.description || post.excerpt,
-                                                            }}
-                                                            itemProp="description"
-                                                        />
+                                                        <p itemProp="description">{post.frontmatter.description || post.excerpt}</p>
                                                     </div>
                                                 </motion.section>
                                             </article>
@@ -168,7 +163,7 @@ export const pageQuery = graphql`
                 title
             }
         }
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+        allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
             nodes {
                 timeToRead
                 excerpt
