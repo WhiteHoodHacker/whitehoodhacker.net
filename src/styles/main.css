@@ -245,6 +245,10 @@ html {
     border-radius: 50%;
     overflow: hidden;
 }
+.gatsby-image-wrapper {
+    position: relative;
+    z-index: 0; 
+ }
 .main-badge {
     height: auto;
     width: auto;
