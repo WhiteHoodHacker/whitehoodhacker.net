@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Footer from "../components/footer"
 import NavigationSpacer from "../components/navigation-spacer"
+import PostFooter from "../components/post-footer"
 import PostSidebar from "../components/post-sidebar"
 import Seo from "../components/seo"
 import ShareBanner from "../components/share-banner"
@@ -51,9 +52,11 @@ const PostTemplate = ({ data, location }) => {
                             <p>If you enjoyed the post, consider sharing it!</p>
                             <ShareBanner shareUrl={postUrl} />
                             <hr />
+                            <PostFooter />
                             <div className="text-center">
                                 <p><a aria-label="Back to Top" href="#top">Back to Top</a></p>
                             </div>
+                            <hr />
                         </div>
                     </div>
                     <nav className="mb-5">
