@@ -158,8 +158,23 @@ html {
         border-top-right-radius: 0.5rem !important;
     }
 }
-#dark-toggle {
+#main-sunglasses-icon {
     display: none;
+}
+body.dark #main-sunglasses-icon {
+    display: flex !important;
+}
+#main-sun-icon {
+    display: flex;
+}
+body.dark #main-sun-icon {
+    display: none !important;
+}
+#main-dark-mode-tooltip:after {
+    content: "Dark mode";
+}
+body.dark #main-dark-mode-tooltip:after {
+    content: "Light mode" !important;
 }
 .main-top-tooltip,
 .main-bottom-tooltip {
