@@ -146,7 +146,14 @@ const PostsIndex = ({ data, location }) => {
                         </div>
                     </div>
                 </div>
-                <Footer />
+                <motion.span
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ ease: "circOut", duration: (indexClicked != null ? 0.2 : 0.0) }}
+                    style={{ marginTop: "1em" }}
+                >
+                    <Footer />
+                </motion.span>
             </div>
         </div>
     )

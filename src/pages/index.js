@@ -115,7 +115,7 @@ class Home extends React.Component {
                                         <div className="row align-items-center justify-content-center g-0">
                                             <div className="col-md-7">
                                                 <div className="card-body">
-                                                    <p className="h5 card-title"><strong>101sec Cyber Team</strong></p>
+                                                    <p className="h5 card-title">101sec Cyber Team</p>
                                                     <p className="card-text m-0">During high school, I established 101sec as a student-led program with the mission to make infosec engaging for students. I helped organize events, recruit new members, and educate others about cybersecurity. Today, I continue to mentor the team.</p>
                                                     <p className="card-text m-0"><a aria-label="101sec website" target="_blank" rel="noopener noreferrer" href="https://101sec.net/cyber">See website</a></p>
                                                 </div>
@@ -135,7 +135,7 @@ class Home extends React.Component {
                                         <div className="row align-items-center justify-content-center g-0">
                                             <div className="col-md-7 order-md-2">
                                                 <div className="card-body">
-                                                    <p className="h5 card-title"><strong>101sec Network</strong></p>
+                                                    <p className="h5 card-title">101sec Network</p>
                                                     <p className="card-text">A side hobby that evolved into something larger, I work as a system administrator for the 101sec Minecraft server. By running this server for the past three years, I've learned how to handle incidents, perform maintenance, deploy new services, and ensure uptime while using best practices in security.</p>
                                                 </div>
                                             </div>
@@ -154,7 +154,7 @@ class Home extends React.Component {
                                         <div className="row align-items-center justify-content-center g-0">
                                             <div className="col-md-7">
                                                 <div className="card-body">
-                                                    <p className="h5 card-title"><strong>FIRST Robotics</strong></p>
+                                                    <p className="h5 card-title">FIRST Robotics</p>
                                                     <p className="card-text">I'm proud to have competed in FIRST robotics for over eight years and I'm honored to be a part of FIRST alumni. During my time with <a target="_blank" rel="noopener noreferrer" href="http://www.wildstang.org/ws_wp/">WildStang</a> (FRC 111), I worked heavily with Java using a custom framework to program functions for the robot. I also developed strong communication and teamwork skills.</p>
                                                 </div>
                                             </div>
@@ -181,7 +181,7 @@ class Home extends React.Component {
                             <div className="col-md-10">
                                 <div className="d-inline-block">
                                     <RevealAnimation animationClass="main-reveal-text">
-                                        <p className="h5"><strong>Achievements</strong></p>
+                                        <p className="h5">Achievements</p>
                                     </RevealAnimation>
                                 </div>
                                 <RevealAnimation animationClass="main-fade-in-animation">
@@ -192,7 +192,7 @@ class Home extends React.Component {
                                 </RevealAnimation>
                                 <div className="d-inline-block">
                                     <RevealAnimation animationClass="main-reveal-text">
-                                        <p className="h5"><strong>Academics</strong></p>
+                                        <p className="h5">Academics</p>
                                     </RevealAnimation>
                                 </div>
                                 <RevealAnimation animationClass="main-fade-in-animation">
@@ -207,7 +207,7 @@ class Home extends React.Component {
                                 </RevealAnimation>
                                 <div className="d-inline-block">
                                     <RevealAnimation animationClass="main-reveal-text">
-                                        <p className="h5"><strong>CyberPatriot</strong></p>
+                                        <p className="h5">CyberPatriot</p>
                                     </RevealAnimation>
                                 </div>
                                 <RevealAnimation animationClass="main-fade-in-animation">
@@ -220,7 +220,7 @@ class Home extends React.Component {
                                 </RevealAnimation>
                                 <div className="d-inline-block">
                                     <RevealAnimation animationClass="main-reveal-text">
-                                        <p className="h5"><strong>National Cyber League</strong></p>
+                                        <p className="h5">National Cyber League</p>
                                     </RevealAnimation>
                                 </div>
                                 <RevealAnimation animationClass="main-fade-in-animation">
@@ -239,7 +239,7 @@ class Home extends React.Component {
                                 </RevealAnimation>
                                 <div className="d-inline-block">
                                     <RevealAnimation animationClass="main-reveal-text">
-                                        <p className="h5"><strong>Other competitions and CTFs</strong></p>
+                                        <p className="h5">Other competitions and CTFs</p>
                                     </RevealAnimation>
                                 </div>
                                 <RevealAnimation animationClass="main-fade-in-animation">

@@ -32,6 +32,7 @@ const PostFooter = () => {
     return (
         <React.Fragment>
             <Comment ref={commentBox} />
+            <hr />
         </React.Fragment>
     )
 }

@@ -33,7 +33,7 @@ const PostTemplate = ({ data, location }) => {
                             </p>
                             <article id="post-content" itemScope itemType="http://schema.org/Article">
                                 <header>
-                                    <h1 itemProp="headline"><strong>{post.frontmatter.title}</strong></h1>
+                                    <h1 itemProp="headline">{post.frontmatter.title}</h1>
                                     <p className="main-reveal-text-short d-inline-block">{post.frontmatter.date} &#8226; {post.timeToRead} min read</p>
                                 </header>
                                 <section
@@ -53,10 +53,6 @@ const PostTemplate = ({ data, location }) => {
                             <ShareBanner shareUrl={postUrl} />
                             <hr />
                             <PostFooter />
-                            <div className="text-center">
-                                <p><a aria-label="Back to Top" href="#top">Back to Top</a></p>
-                            </div>
-                            <hr />
                         </div>
                     </div>
                     <nav className="mb-5">

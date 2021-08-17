@@ -55,6 +55,7 @@ h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5,
 .main-color-title {
     color: var(--color-title);
+    font-weight: bold;
 }
 .main-color-surface {
     background-color: var(--color-surface)
