@@ -62,7 +62,7 @@ const PostsIndex = ({ data, location }) => {
     if (posts.length === 0) {
         return (
             <div className="main-page h-100">
-                <Seo title="Posts" description="See all posts from WhiteHoodHacker and catch up on the latest articles. I promise I'm not that boring." />
+                <Seo title="Posts" description="See and read all posts from WhiteHoodHacker. I promise I'm not that boring." />
                 <div className="container-fluid d-flex flex-column main-mh-100">
                     <NavigationSpacer />
                     <div className="container flex-grow-1">

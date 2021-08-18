@@ -8,7 +8,7 @@ class Contact extends React.Component {
     render() {
         return (
             <div className="main-page h-100">
-                <Seo title="Contact" description="Let's stay in touch. Find out how to contact WhiteHoodHacker and how to do it securely." />
+                <Seo title="Contact" description="Find out how to contact WhiteHoodHacker and how to do it securely." />
                 <div className="container-fluid d-flex flex-column main-mh-100">
                     <NavigationSpacer />
                     <div className="container flex-grow-1">
