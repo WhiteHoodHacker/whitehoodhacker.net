@@ -231,6 +231,10 @@ body.dark-mode #main-dark-mode-tooltip:after {
     visibility: visible;
     opacity: 1;
 }
+figcaption {
+    text-align: center;
+    font-size: 0.9em;
+}
 .main-button-to-link {
     font-size: 1em;
     text-align: left;
