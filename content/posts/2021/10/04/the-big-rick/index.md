@@ -1,7 +1,7 @@
 ---
 title: "IoT Hacking and Rickrolling My High School District"
 date: "2021-10-04T15:00:00.000Z"
-description: "This is the story of how I pulled off my senior prank: featuring an IPTV system, a paging system, and Rick Astley."
+description: "This is the story of how I created a botnet of IPTVs to rickroll 10,000+ students for my senior prank."
 author: "WhiteHoodHacker"
 slug: "posts/2021-10-04-the-big-rick"
 image: "https://raw.githubusercontent.com/WhiteHoodHacker/whitehoodhacker.net/main/content/posts/2021/10/04/the-big-rick/eghs.jpg"
