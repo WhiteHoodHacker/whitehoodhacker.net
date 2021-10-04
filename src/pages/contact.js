@@ -16,9 +16,9 @@ class Contact extends React.Component {
                             <div className="col-md-10 col-xl-8">
                                 <h1 className="main-reveal-text-short mt-0">Contact</h1>
                                 <div className="main-fade-in-animation">
-                                    <p>You can send an email to "hello at whitehoodhacker dot net".</p>
-                                    <p>If you want to communicate with encryption, use my <a aria-label="PGP key" href="/WhiteHoodHacker.asc">PGP key</a>.</p>
-                                    <p>For verification purposes, my Discord tag is <a target="_blank" rel="noopener noreferrer" href="https://discord.com/users/387289660675588098">WhiteHoodHacker#0010</a>, but I normally don't accept requests without mutual servers/friends.</p>
+                                    <p>You can send an email to <code class="language-text">hello at whitehoodhacker dot net</code>.</p>
+                                    <p>Here is my <a aria-label="PGP key" href="/WhiteHoodHacker.asc">PGP key</a> if you wish to communicate using encryption.</p>
+                                    <p>For verification purposes, my Discord tag is <a target="_blank" rel="noopener noreferrer" href="https://discord.com/users/387289660675588098">WhiteHoodHacker#0010</a>, but I normally don't accept requests without mutual servers or friends.</p>
                                     <p>I can also be found on social media @WhiteHoodHacker.</p>
                                 </div>
                             </div>

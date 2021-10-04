@@ -8,7 +8,7 @@ This website uses GatsbyJS, a static site generator based on the ReactJS framewo
 
 I developed this website entirely from scratch, although most of the blog post generation was taken from [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog). Posts are generated from markdown and MDX files located in the `contents/posts` directory.
 
-This website also uses Bootstrap 5.0, mainly for the grid system and a few visual components. Most of the visual styles are custom made in (including the fancy animations). These styles can be found in `main.css`.
+This website also uses Bootstrap 5.0, mainly for the grid system and a few visual components. Most of the visual styles are custom made (including the fancy animations). These styles can be found in `main.css`.
 
 ## Quick Start
 

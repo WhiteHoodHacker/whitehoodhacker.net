@@ -15,7 +15,7 @@
     --color-background: #111111;
     --color-background-inverse: #f8f9fa;
     --color-surface: #222222;
-    --color-text: rgba(238, 238, 238, 0.88);
+    --color-text: rgba(238, 238, 238, 1.0);
     --color-title: #dddddd;
     --color-title-inverse: #000000;
     --color-primary: #0acc74;
@@ -51,11 +51,14 @@ body {
 .main-surface {
     background-color: var(--color-surface);
 }
-h1, h2, h3, h4, h5,
-.h1, .h2, .h3, .h4, .h5,
+h1, h2, h4, h5,
+.h1, .h2, .h4, .h5,
 .main-color-title {
     color: var(--color-title);
     font-weight: bold;
+}
+h3, .h3 {
+    color: var(--color-title);
 }
 .main-color-surface {
     background-color: var(--color-surface)
@@ -115,6 +118,21 @@ a:active { text-decoration: none; }
     html, body {
         font-family: 'Inconsolata Variable Weight', Consolas, 'Courier New';
     }
+}
+table {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-collapse: collapse;
+    border-spacing: 0.25rem;
+}
+table thead tr th {
+    border-bottom: 1px solid var(--color-text);
+}
+th, td {
+    vertical-align: top;
+    line-height: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
 }
 html {
     font-size: 1rem;
@@ -279,6 +297,20 @@ figcaption {
 }
 .main-active {
     background-position: 100% 0;
+}
+article {
+    overflow-wrap: break-word;
+}
+blockquote {
+    background: var(--color-surface);
+    border-left: 10px solid var(--color-primary);
+    margin: 1em 10px;
+    padding: 1em 20px 1px 20px;
+    overflow-wrap: break-word;
+}
+code[class*="language-"], pre[class*="language-"] {
+    font-size: 0.8rem !important;
+    overflow-wrap: break-word !important;
 }
 .main-box {
     border: 1px solid #696969;

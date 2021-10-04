@@ -49,6 +49,7 @@ const Seo = ({ title, description, image, twitter, lang, meta }) => {
                 { name: "robots", content: "index, follow" },
                 { name: "theme-color", media: "(prefers-color-scheme: dark)", content: "#111111" },
                 { name: "theme-color", media: "(prefers-color-scheme: light)", content: "#f8f9fa" },
+                { name: "format-detection", content: "telephone=no" },
             ].concat(meta)}
             link = {[
                 { rel: "preload", as: "font", href: "/fonts/inconsolata-latin-variable-wghtOnly-normal.woff2", type: "font/woff2", crossorigin: "anonymous" },

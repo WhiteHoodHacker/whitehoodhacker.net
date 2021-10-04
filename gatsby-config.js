@@ -32,6 +32,7 @@ module.exports = {
                         resolve: `gatsby-remark-images`,
                         options: {
                             linkImagesToOriginal: false,
+                            maxWidth: 900,
                         },
                     },
                     {
@@ -40,9 +41,15 @@ module.exports = {
                             wrapperStyle: `margin-bottom: 1.0725rem`,
                         },
                     },
+                    {
+                        resolve: `gatsby-remark-smartypants`,
+                        options: {
+                            ellipses: false,
+                            quotes: false,
+                        }
+                    },
                     `gatsby-remark-prismjs`,
                     `gatsby-remark-copy-linked-files`,
-                    `gatsby-remark-smartypants`,
                 ],
             },
         },

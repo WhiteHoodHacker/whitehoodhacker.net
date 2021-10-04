@@ -220,43 +220,45 @@ class Home extends React.Component {
                                 </RevealAnimation>
                                 <div className="d-inline-block">
                                     <RevealAnimation animationClass="main-reveal-text">
-                                        <p className="h5">National Cyber League</p>
+                                        <p className="h5">CTF Competitions</p>
                                     </RevealAnimation>
                                 </div>
                                 <RevealAnimation animationClass="main-fade-in-animation">
-                                    <ul>
-                                        <li>NCL Spring 2018 Preseason - 789 / 3124</li>
-                                        <li>NCL Spring 2018 Individual - 577 / 2452</li>
-                                        <li>NCL Spring 2019 Preseason - 104 / 4482</li>
-                                        <li>NCL Spring 2019 Individual - 60 / 3607</li>
-                                        <li>NCL Spring 2019 Team - 61 / 548</li>
-                                        <li>NCL Spring 2020 Preseason - 9 / 5379</li>
-                                        <li>NCL Spring 2020 Individual - 68 / 5357</li>
-                                        <li>NCL Spring 2020 Team - 97 / 925</li>
-                                        <li>NCL Spring 2021 Preseason - 11 / 5794</li>
-                                        <li>NCL Spring 2021 Individual - 5 / 4180</li>
-                                    </ul>
-                                </RevealAnimation>
-                                <div className="d-inline-block">
-                                    <RevealAnimation animationClass="main-reveal-text">
-                                        <p className="h5">Other competitions and CTFs</p>
-                                    </RevealAnimation>
-                                </div>
-                                <RevealAnimation animationClass="main-fade-in-animation">
-                                    <ul>
-                                        <li>ångstromCTF 2019 - 383 / 1570</li>
-                                        <li>LBC2 2021 (Advanced Division) - 4 / ??</li>
-                                        <li>TJCTF 2021 - 474 / 1205</li>
-                                        <li>National Cyber Scholarship Competition 2021 - 10 / 3277</li>
-                                        <li>CIHSCDC 2021 - 1 / 8</li>
-                                        <li>TAMUctf 2021 - 31 / 343</li>
-                                        <li>HackTheBox Cyber Apocalypse 2021 - 112 / 4740</li>
-                                        <li>TAMUctf 2021 - 31 / 344</li>
-                                        <li>FAUST CTF 2021 - 32 / 77</li>
-                                        <li>HSCTF 8 - 13 / 1162</li>
-                                        <li>redpwnCTF 2021 - 3 / 1416</li>
-                                        <li>UIUCTF 2021 - Challenge developer and organizer</li>
-                                    </ul>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Rank</th>
+                                                <th>Team or Alias</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>NCL Spring 2018 Preseason</td><td>789 / 3124</td><td>WhiteHoodHacker</td></tr>
+                                            <tr><td>NCL Spring 2018 Individual Game</td><td>577 / 2452</td><td>WhiteHoodHacker</td></tr>
+                                            <tr><td>NCL Spring 2019 Preseason</td><td>104 / 4482</td><td>WhiteHoodHacker</td></tr>
+                                            <tr><td>NCL Spring 2019 Individual Game</td><td>60 / 3607</td><td>WhiteHoodHacker</td></tr>
+                                            <tr><td>ångstromCTF 2019</td><td>383 / 1570</td><td>verybad</td></tr>
+                                            <tr><td>NCL Spring 2019 Team Game</td><td>61 / 548</td><td>101sec</td></tr>
+                                            <tr><td>NCL Spring 2020 Preseason</td><td>9 / 5379</td><td>WhiteHoodHacker</td></tr>
+                                            <tr><td>NCL Spring 2020 Individual Game</td><td>68 / 5357</td><td>White</td></tr>
+                                            <tr><td>NCL Spring 2020 Team Game</td><td>97 / 925</td><td>101sec</td></tr>
+                                            <tr><td>TJCTF 2020</td><td>474 / 1205</td><td>101sec</td></tr>
+                                            <tr><td>LBC2 2021 Advanced Division</td><td> 4 / 16</td><td>101sec</td></tr>
+                                            <tr><td>NCL Spring 2021 Preseason</td><td>11 / 5794</td><td>White</td></tr>
+                                            <tr><td>NCL Spring 2021 Individual Game</td><td>5 / 4180</td><td>White</td></tr>
+                                            <tr><td>National Cyber Scholarship Competition 2021</td><td>10 / 3277</td><td>WhiteHoodHacker</td></tr>
+                                            <tr><td>CIHSCDC 2021</td><td>1 / 8</td><td>101sec</td></tr>
+                                            <tr><td>TAMUctf 2021</td><td>31 / 343</td><td>ACS Sirius</td></tr>
+                                            <tr><td>HackTheBox Cyber Apocalypse 2021</td><td>112 / 4740</td><td>bob</td></tr>
+                                            <tr><td>FAUST CTF 2021</td><td>32 / 77</td><td>Applied Cybersecurity Society</td></tr>
+                                            <tr><td>HSCTF 8</td><td>13 / 1162</td><td>icypete</td></tr>
+                                            <tr><td>redpwnCTF 2021</td><td>3 / 1416</td><td>OpeOnlyOverflows</td></tr>
+                                            <tr><td>UIUCTF 2021</td><td>Challenge Dev</td><td>SIGPwny</td></tr>
+                                            <tr><td>CSAW '21 Qualifiers</td><td>2 / 1214</td><td>SIGPwny</td></tr>
+                                            <tr><td>PBjar CTF 2021</td><td>11 / 560</td><td>[sqrt(-1) + 1]</td></tr>
+                                            <tr><td>Aviation ISAC Collegiate CTF</td><td>8 / 22</td><td>IrisSec</td></tr>
+                                        </tbody>
+                                    </table>
                                 </RevealAnimation>
                             </div>
                         </div>
