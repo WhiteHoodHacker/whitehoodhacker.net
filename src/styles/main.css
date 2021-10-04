@@ -2,6 +2,7 @@
 .light-mode {
     --color-background: #f8f9fa;
     --color-background-inverse: #111111;
+    --color-input: #ffffff;
     --color-surface: #eeeeee;
     --color-text: #000000;
     --color-title: #000000;
@@ -14,6 +15,7 @@
     -webkit-font-smoothing: antialiased;
     --color-background: #111111;
     --color-background-inverse: #f8f9fa;
+    --color-input: #222222;
     --color-surface: #222222;
     --color-text: rgba(238, 238, 238, 1.0);
     --color-title: #dddddd;
@@ -145,6 +147,15 @@ html {
     .container-xl, .container-lg, .container-md, .container-sm, .container {
       max-width: 1140px !important;
     }
+}
+.form-control {
+    color: var(--color-text) !important;
+    background-color: var(--color-input) !important;
+}
+.form-control:focus {
+    background-color: var(--color-input) !important;
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem var(--color-primary) !important;
 }
 .main-rounded-start-lg {
     border-bottom-left-radius: 0.5rem !important;

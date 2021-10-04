@@ -8,6 +8,7 @@ import PostFooter from "../components/post-footer"
 import PostSidebar from "../components/post-sidebar"
 import Seo from "../components/seo"
 import ShareBanner from "../components/share-banner"
+import SubscribeForm from "../components/subscribe-form"
 
 const PostTemplate = ({ data, location }) => {
     const post = data.mdx
@@ -50,7 +51,8 @@ const PostTemplate = ({ data, location }) => {
                     </div>
                     <div className="row justify-content-center">
                         <div className="col-md-10 col-xl-8">
-                            <p>Published {post.frontmatter.date}. Written by <strong>WhiteHoodHacker</strong>.</p>
+                            <p>Published {post.frontmatter.date} by <strong>WhiteHoodHacker</strong>.</p>
+                            <SubscribeForm />
                             <p>If you enjoyed the post, consider sharing it!</p>
                             <ShareBanner shareUrl={postUrl} />
                             <hr />

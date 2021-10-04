@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Footer from "../components/footer"
@@ -272,19 +271,31 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </section>
-                <section id="contact" className="container-fluid mb-5">
+                <section id="subscribe" className="container-fluid mb-5">
                     <div className="container h-100">
                         <div className="row justify-content-center">
                             <div className="col-md-10 text-center">
-                                <div className="d-inline-block">
-                                    <RevealAnimation animationClass="main-reveal-text">
-                                        <h1>Let's stay in touch.</h1>
-                                    </RevealAnimation>
+                                <div id="mc_embed_signup">
+                                    <form action="https://gmail.us5.list-manage.com/subscribe/post?u=602886b7ffa91c629bc8d12a5&amp;id=3774b743fb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="form-inline" target="_blank" novalidate>
+                                        <div id="mc_embed_signup_scroll" className="form-group">
+                                            <div className="d-inline-block">
+                                                <RevealAnimation animationClass="main-reveal-text">
+                                                    <h1><label htmlFor="mce-EMAIL">Let's stay in touch.</label></h1>
+                                                </RevealAnimation>
+                                            </div>
+                                            <br />
+                                            <RevealAnimation animationClass="main-fade-in-animation">
+                                                <div className="d-inline-flex">
+                                                    <input type="email" defaultValue="" name="EMAIL" className="form-control" id="mce-EMAIL" placeholder="hello@example.com" required />
+                                                    <div style={{position: "absolute", left: "-5000px"}} aria-hidden="true"><input type="text" name="b_602886b7ffa91c629bc8d12a5_3774b743fb" tabindex="-1" value="" /></div>
+                                                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="btn main-btn-primary ms-2" />
+                                                </div>
+                                                <br />
+                                                <small><em>You will only be notified of new posts. I don't spam.</em></small>
+                                            </RevealAnimation>
+                                        </div>
+                                    </form>
                                 </div>
-                                <br />
-                                <RevealAnimation animationClass="main-fade-in-animation">
-                                    <Link to="/contact"><button className="btn btn-lg main-btn-primary">Contact me!</button></Link>
-                                </RevealAnimation>
                             </div>
                         </div>
                     </div>
