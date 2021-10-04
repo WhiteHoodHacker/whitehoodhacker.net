@@ -4,7 +4,7 @@ date: "2021-10-04T15:00:00.000Z"
 description: "This is the story of how I pulled off my senior prank: featuring an IPTV system, a paging system, and Rick Astley."
 author: "WhiteHoodHacker"
 slug: "posts/2021-10-04-the-big-rick"
-image: "https://whitehoodhacker.net/posts/2021-10-04-the-big-rick/eghs.jpg"
+image: "https://raw.githubusercontent.com/WhiteHoodHacker/whitehoodhacker.net/main/content/posts/2021/10/04/the-big-rick/eghs.jpg"
 ---
 import { Tweet } from "react-twitter-widgets"
 import { Link } from "gatsby"
@@ -262,4 +262,4 @@ This has been one of the most remarkable experiences I ever had in high school a
     </figure>
 </center>
 
-![](http://badges.whitehoodhacker.net/badge?page_id=whitehoodhacker-net-posts-2021-09-18-the-big-rick&text=hits&color=0acc74)
+![](https://visitor-badge-reloaded.herokuapp.com/badge?page_id=whitehoodhacker-net-posts-2021-09-18-the-big-rick&text=hits&color=0acc74)

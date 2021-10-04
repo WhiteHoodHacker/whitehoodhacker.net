@@ -2,7 +2,7 @@
   "name": "whitehoodhacker.net",
   "private": true,
   "description": "WhiteHoodHacker's personal website and blog",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
