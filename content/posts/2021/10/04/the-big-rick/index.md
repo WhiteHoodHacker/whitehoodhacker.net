@@ -28,7 +28,7 @@ In this post, I'll be explaining how I did it and how I evaded detection, as wel
 
 We prepared complete documentation of everything we did, including recommendations to remediate the vulnerabilities we discovered. We went a comprehensive 26-page penetration test report to the D214 tech team and worked with them to help secure their network.
 
-With that said, what we did could be considered illegal, and other administrations may have pressed charges. We are grateful that the D214 administration was so understanding.
+With that said, what we did was very illegal, and other administrations may have pressed charges. We are grateful that the D214 administration was so understanding.
 
 ## The Big Rick
 
@@ -64,7 +64,7 @@ Before moving on, I will briefly explain the IPTV system. The system is composed
 - AvediaStream (encoders)
 - AvediaServer (management)
 
-AvediaPlayers are small blue boxes that connect to projectors and TVs and make it easy to control them. They can send serial commands to their respective device to turn the display on/off, change inputs/volume, switch channels, etc. These receivers include both a web interface and an SSH server to execute the serial commands. Additionally, they run embedded Linux with BusyBox tools and use some obscure CPU architecture designed for IoT devices called ARC (Argonaut RISC Core).
+AvediaPlayers are small blue boxes that connect to projectors and TVs. They can send serial commands to their respective device to turn the display on/off, change inputs/volume, switch channels, etc. These receivers include both a web interface and an SSH server to execute the serial commands. Additionally, they run embedded Linux with BusyBox tools and use some obscure CPU architecture designed for IoT devices called ARC (Argonaut RISC Core).
 
 <figure>
     <img alt="AvediaPlayer r9300" src="./receiver.jpg" />
@@ -77,7 +77,7 @@ Next, AvediaStream encoders connect to devices that broadcast live video. They e
 
 Last but not least, AvediaServers allow administrators to control all receivers and encoders at once. These have typical x86_64 processors and run the enterprise Linux distribution, CentOS. Like the receivers and encoders, they also have web interfaces and SSH servers.
 
-Since freshman year, I had complete access to the IPTV system. I only messed around with it a few times and had plans for a senior prank, but it remained in the back of my mind and eventually went forgotten.
+Since freshman year, I had complete access to the IPTV system. I only messed around with it a few times and had plans for a senior prank, but it moved to the back of my mind and eventually went forgotten.
 
 ## Preparation
 
@@ -147,15 +147,15 @@ elif [ "$1" -eq "2" ]; then
     </figcaption>
 </figure>
 
-In the actual payload, I used repeatedly looped commands to keep the rickroll running. For example, every 10 seconds, the display would power on and set the maximum volume. This way, if someone attempted to power off the projector or mute it, it would revert and continue playing. The only way to shut it off would be to pull the plug or change the input source. (Unfortunately, looping inputs changes causes flashes to happen even if the current source is the same as the latest source. I had to rely on a failsafe input switch the activated right before the rickroll started to ensure everyone was tuned in, which you can see in the video at the 48-second countdown.)
+In the actual payload, I repeatedly looped commands to keep the rickroll running. For example, every 10 seconds, the display would power on and set the maximum volume. This way, if someone attempted to power off the projector or mute it, it would revert and continue playing. The only way to shut it off would be to pull the plug or change the input source. (Looping input changes causes flashes even if the current source is the same as the latest source. I had to rely on a failsafe input switch the activated right before the rickroll started to ensure everyone was tuned in. You can see this flash in the video at the 48-second countdown.)
 
-The vulnerabilities exploited to gain initial access were implementation-specific (meaning D214 was at fault for using default passwords). However, I discovered vendor privilege escalation vulnerabilities in all of Exterity's IPTV products, allowing me to gain root access across all systems. One of these bugs was a simple GTFO-bin, but the other two are novel vulnerabilities that I cannot (and should not) disclose.
+The vulnerabilities exploited to gain initial access were implementation-specific (meaning D214 was at fault for using default passwords). However, I discovered vendor privilege escalation vulnerabilities in all of Exterity's IPTV products, allowing me to gain root access across all systems. One of these bugs was a simple GTFO-bin, but the other two are novel vulnerabilities that I cannot (and should not) publish.
 
 ### 2. RTP Multicast Stream
 
 The next issue we tackled was setting up a custom video stream to play the rickroll in real-time. We needed to broadcast multicast traffic, but only the AvediaStream encoders or the AvediaServers could do this because of ACL restrictions.
 
-Setting up the stream was arguable the most time-consuming part of preparation because testing was an absolute pain. I only needed a single projector for development, but it's not easy when classes are using them during the day.
+Setting up the stream was arguably the most time-consuming part of preparation because testing was an absolute pain. I only needed a single projector for development, but it's not easy when classes are using them during the day.
 
 So I tested at night instead! I would remotely connect to one of the PCs in the computer lab with the front camera facing the projector. Then, I would record a video to test if the projector displayed the stream correctly!
 
@@ -169,7 +169,7 @@ So I tested at night instead! I would remotely connect to one of the PCs in the 
     </figcaption>
 </figure>
 
-The lag you see in the video is one of the earlier issues I faced with the stream. Turns out, trying to redirect UDP traffic through the AvediaStream encoders added too much latency. I fixed this by broadcasting to multicast directly from an AvediaServer using `ffmpeg`.
+The lag you see in the video is one of the earlier issues I faced with the stream. It turned out trying to redirect UDP traffic through the AvediaStream encoders added too much latency. I fixed this by broadcasting to multicast directly from an AvediaServer using `ffmpeg`.
 
 Hopefully, I didn't scare any late-night staff!
 
@@ -232,9 +232,7 @@ A few days after sending the report through the anonymous email account, we rece
 
 I was ecstatic that the administration was open to remediating their problems and auditing them with us. Although the D214 administration communicated good intentions (and they did hold in the future), my peers did not trust the administration and were skeptical of the true nature of the meeting -- one of them referred to the whole thing as a sting operation!
 
-We decided I would reveal myself to present our debrief slides with the others remaining anonymous in the Zoom meeting. I had planned on announcing my involvement from the beginning since I wanted to publish this blog post. (I was also pretty much the prime suspect anyways.)
-
-But, just in case, I scheduled the debrief to take place *after* graduation.
+We decided I would reveal myself to present our debrief slides with the others remaining anonymous in the Zoom meeting. I had planned on announcing my involvement from the beginning since I wanted to publish this blog post. (I was also pretty much the prime suspect anyways.) But, just in case, I scheduled the debrief to take place *after* I graduated.
 
 <figure>
     <img alt="Big Rick debrief whoami slide" src="./whoami.jpg" />
@@ -245,9 +243,9 @@ But, just in case, I scheduled the debrief to take place *after* graduation.
 
 In all seriousness, the debrief went extremely well and was productive for everyone. We answered clarifying questions from the tech team and gave additional tips for remediation. We even managed to get the district to look into expanding the IT/cybersecurity program and hopefully, sponsoring a D214 CTF? :o
 
-This has been one of the most remarkable experiences I ever had in high school and I thank everyone who helped make it possible. That's all and thanks for reading!
+This has been one of the most remarkable experiences I ever had in high school and I thank everyone who helped support me. That's all and thanks for reading!
 
-*By the way, if you are from D214 and have any videos, pictures, or social media posts of the rickroll, send them to my <Link to="/contact">contact</Link> and I'll share them below along with credit!*
+*If you are from D214 and have any videos, pictures, or social media posts of the rickroll, send them to my <Link to="/contact">contact</Link> and I'll share them below along with credit!*
 
 <center>
     <Tweet tweetId="1388293752045903876" />
