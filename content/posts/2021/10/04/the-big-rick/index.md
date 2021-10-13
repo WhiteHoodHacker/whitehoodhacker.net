@@ -147,7 +147,7 @@ elif [ "$1" -eq "2" ]; then
     </figcaption>
 </figure>
 
-In the actual payload, I repeatedly looped commands to keep the rickroll running. For example, every 10 seconds, the display would power on and set the maximum volume. This way, if someone attempted to power off the projector or mute it, it would revert and continue playing. The only way to shut it off would be to pull the plug or change the input source. (Looping input changes causes flashes even if the current source is the same as the latest source. I had to rely on a failsafe input switch the activated right before the rickroll started to ensure everyone was tuned in. You can see this flash in the video at the 48-second countdown.)
+In the actual payload, I repeatedly looped commands to keep the rickroll running. For example, every 10 seconds, the display would power on and set the maximum volume. This way, if someone attempted to power off the projector or mute it, it would revert and continue playing. The only way to shut it off would be to pull the plug or change the input source. (Looping input changes causes flashes even if the current source is the same as the latest source. I had to rely on a failsafe input switch that activated right before the rickroll started to ensure everyone was tuned in. You can see this flash in the video at the 48-second countdown.)
 
 The vulnerabilities exploited to gain initial access were implementation-specific (meaning D214 was at fault for using default passwords). However, I discovered vendor privilege escalation vulnerabilities in all of Exterity's IPTV products, allowing me to gain root access across all systems. One of these bugs was a simple GTFO-bin, but the other two are novel vulnerabilities that I cannot (and should not) publish.
 
