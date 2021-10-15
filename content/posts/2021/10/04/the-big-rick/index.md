@@ -16,7 +16,7 @@ import { Link } from "gatsby"
     </figcaption>
 </figure>
 
-On April 30th, 2021, I rickrolled my high school district. Not just my school but the entirety of Township High School District 214. It's the second-largest high school district in Illinois, consisting of 6 different schools with over 11,000 enrolled students.
+On April 30th, 2021, I rickrolled my high school district. Not just my school but the entirety of Township High School District 214. It is one of the largest high school district in Illinois, consisting of 6 different schools with over 11,000 enrolled students.
 
 This story isn't one of those typical rickrolls where students sneak Rick Astley into presentations, talent shows, or Zoom calls. I did it by hijacking every networked display in every school to broadcast "Never Gonna Give You Up" in perfect synchronization. Whether it was a TV in a hall, a projector in a classroom, or a jumbotron displaying the lunch menu, as long as it was networked, I hacked it!
 
