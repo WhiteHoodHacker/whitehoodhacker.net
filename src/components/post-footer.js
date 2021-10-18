@@ -3,7 +3,7 @@ import useDarkMode from "use-dark-mode"
 import Comment from "./comment"
 
 const PostFooter = () => {
-    const darkMode = useDarkMode(false)
+    const darkMode = useDarkMode(true)
     const commentBox = React.createRef()
     React.useEffect(() => {
         const commentScript = document.createElement("script")

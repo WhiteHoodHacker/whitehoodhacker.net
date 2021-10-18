@@ -159,11 +159,9 @@ Setting up the stream was arguably the most time-consuming part of preparation b
 
 So I tested at night instead! I would remotely connect to one of the PCs in the computer lab with the front camera facing the projector. Then, I would record a video to test if the projector displayed the stream correctly!
 
+<iframe width="640" height="360" allow="fullscreen; picture-in-picture;" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/tguXIugaFz8" />
+
 <figure>
-    <video width="100%" height="auto" controls>
-        <source src="./late_night.mp4" type="video/mp4" />
-        <p>Your browser does not support video playback.</p>
-    </video>
     <figcaption>
         I used a loop of the DVD bouncing logo to test stream quality.
     </figcaption>
