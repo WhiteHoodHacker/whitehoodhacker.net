@@ -6,6 +6,8 @@ I developed this website entirely from scratch, although most of the blog post g
 
 This website also uses Bootstrap 5.0, mainly for the grid system and a few visual components. Most of the visual styles are custom made (including the fancy animations). These styles can be found in `main.css`.
 
+Page routing is a little bit wonky since I'm using Cloudflare Pages. See this [commit](https://github.com/WhiteHoodHacker/whitehoodhacker.net/commit/d3ebecf71a91b7657abfced4d1956053141dcd46) for more details.
+
 ## Quick Start
 
 Make sure all dependences are installed:
