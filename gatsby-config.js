@@ -12,8 +12,10 @@ module.exports = {
         image: `https://whitehoodhacker.net/icon256.png`,
     },
     plugins: [
+        `gatsby-plugin-create-page-html`,
         `gatsby-plugin-image`,
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-remove-trailing-slashes`,
         `gatsby-plugin-slug`,
         'gatsby-transformer-sharp',
         {
@@ -66,7 +68,7 @@ module.exports = {
             resolve: `gatsby-plugin-sitemap`,
             options: {
                 output: `sitemap`,
-                excludes: ['/wp-admin']
+                excludes: ['/wp-admin', '/**/*.html']
             }
         },
         {

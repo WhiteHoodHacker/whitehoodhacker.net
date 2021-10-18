@@ -256,6 +256,7 @@ class Home extends React.Component {
                                             <tr><td>CSAW '21 Qualifiers</td><td>2 / 1214</td><td>SIGPwny</td></tr>
                                             <tr><td>PBjar CTF 2021</td><td>11 / 560</td><td>[sqrt(-1) + 1]</td></tr>
                                             <tr><td>Aviation ISAC Collegiate CTF</td><td>8 / 22</td><td>IrisSec</td></tr>
+                                            <tr><td>pbctf 2021</td><td>26 / 210</td><td>IrisSec</td></tr>
                                         </tbody>
                                     </table>
                                 </RevealAnimation>

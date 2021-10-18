@@ -1,23 +1,23 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``))
-exports.onCreatePage = ({ page, actions }) => {
-    const { createPage, createRedirect, deletePage } = actions
-    const oldPage = Object.assign({}, page)
-    page.path = replacePath(page.path)
-    if (page.path !== oldPage.path) {
-        deletePage(oldPage)
-        createPage(page)
-    }
-    if (!page.path.includes('.html') && page.path !== '/') {
-        createRedirect({
-            fromPath: `${page.path}/`,
-            toPath: page.path,
-            isPermanent: true
-        })
-    }
-}
+// const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``))
+// exports.onCreatePage = ({ page, actions }) => {
+//     const { createPage, createRedirect, deletePage } = actions
+//     const oldPage = Object.assign({}, page)
+//     page.path = replacePath(page.path)
+//     if (page.path !== oldPage.path) {
+//         deletePage(oldPage)
+//         createPage(page)
+//     }
+//     if (!page.path.includes('.html') && page.path !== '/') {
+//         createRedirect({
+//             fromPath: `${page.path}/`,
+//             toPath: page.path,
+//             isPermanent: true
+//         })
+//     }
+// }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions
