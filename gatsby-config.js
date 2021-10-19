@@ -138,7 +138,7 @@ module.exports = {
                         }
                     `,
                         output: "/rss.xml",
-                        title: "WhiteHoodHacker",
+                        title: "WhiteHoodHacker.net Posts",
                     },
                 ],
             },

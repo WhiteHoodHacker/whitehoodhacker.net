@@ -257,6 +257,7 @@ class Home extends React.Component {
                                             <tr><td>PBjar CTF 2021</td><td>11 / 560</td><td>[sqrt(-1) + 1]</td></tr>
                                             <tr><td>Aviation ISAC Collegiate CTF</td><td>8 / 22</td><td>IrisSec</td></tr>
                                             <tr><td>pbctf 2021</td><td>26 / 210</td><td>IrisSec</td></tr>
+                                            <tr><td>NCL Fall 2021 Preseason</td><td>2 / 6423</td><td>Minh@UIUC</td></tr>
                                         </tbody>
                                     </table>
                                 </RevealAnimation>
