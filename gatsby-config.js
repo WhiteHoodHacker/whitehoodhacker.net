@@ -12,7 +12,6 @@ module.exports = {
         image: `https://whitehoodhacker.net/icon256.png`,
     },
     plugins: [
-        `gatsby-plugin-create-page-html`,
         `gatsby-plugin-image`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-remove-trailing-slashes`,
