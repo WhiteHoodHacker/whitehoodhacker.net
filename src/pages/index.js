@@ -20,13 +20,13 @@ class Home extends React.Component {
                             <div className="col-lg-7 col-md-6">
                                 <h1 className="main-reveal-text-short">Hi, I'm Minh.<br />I do cybersecurity.</h1>
                                 <div className="main-fade-in-animation">
-                                    <p>I am an 18 year old security researcher studying computer science at University of Illinois Urbana-Champaign.</p>
+                                    <p>I'm a 19 year old security researcher studying Computer Science at the University of Illinois at Urbana-Champaign.</p>
                                     <p>In my free time, I play CTFs and code random things.</p>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-4 col-sm-7 col-8">
                                 <div className="main-fade-in-animation-delay-1">
-                                    <StaticImage width={300} height={300} className="main-fit-element main-circle" src="../img/portrait512.jpg" alt="Portrait" />
+                                    <StaticImage width={300} height={300} className="main-fit-element main-circle" src="../img/portrait-spray.jpg" alt="Portrait" />
                                 </div>
                             </div>
                         </div>
@@ -114,13 +114,13 @@ class Home extends React.Component {
                                         <div className="row align-items-center justify-content-center g-0">
                                             <div className="col-md-7">
                                                 <div className="card-body">
-                                                    <p className="h5 card-title">101sec Cyber Team</p>
-                                                    <p className="card-text m-0">During high school, I established 101sec as a student-led program with the mission to make infosec engaging for students. I helped organize events, recruit new members, and educate others about cybersecurity. Today, I continue to mentor the team.</p>
-                                                    <p className="card-text m-0"><a aria-label="101sec website" target="_blank" rel="noopener noreferrer" href="https://101sec.net/cyber">See website</a></p>
+                                                    <p className="h5 card-title">SIGPwny</p>
+                                                    <p className="card-text m-0">I'm humbled to be one of the club admins for SIGPwny (the Special Interest Group for Information Security at UIUC). I help run our weekly presentations, organize events and socials, and play CTFs with my talented peers! We also run <a aria-label="UIUCTF on CTFtime" target="_blank" rel="noopener noreferrer" href="https://ctftime.org/ctf/95">UIUCTF</a> in the summer!</p>
+                                                    <p className="card-text m-0"><a aria-label="SIGPwny website" target="_blank" rel="noopener noreferrer" href="https://sigpwny.com/">Go to sigpwny.com</a></p>
                                                 </div>
                                             </div>
                                             <div className="col-md-5">
-                                                <StaticImage width={1024} height={768} className="img-fluid main-rounded-end-lg" src="../img/cpxiii_nats_101sec.jpg" alt="101sec CP-XIII National Finals team" />
+                                                <StaticImage width={1024} height={768} className="img-fluid main-rounded-end-lg" src="../img/sigpwny_cyphercon_2022.jpg" alt="SIGPwny at CypherCon 2022" />
                                             </div>
                                         </div>
                                     </div>
@@ -134,12 +134,13 @@ class Home extends React.Component {
                                         <div className="row align-items-center justify-content-center g-0">
                                             <div className="col-md-7 order-md-2">
                                                 <div className="card-body">
-                                                    <p className="h5 card-title">101sec Network</p>
-                                                    <p className="card-text">A side hobby that evolved into something larger, I work as a system administrator for the 101sec Minecraft server. By running this server for the past three years, I've learned how to handle incidents, perform maintenance, deploy new services, and ensure uptime while using best practices in security.</p>
+                                                    <p className="h5 card-title">101sec Cyber Team</p>
+                                                    <p className="card-text">During high school, I established 101sec as a student-led program with the mission to make infosec engaging for students. I helped organize events, recruit new members, and educate others about cybersecurity. Today, I continue to mentor the team.</p>
+                                                    <p className="card-text m-0"><a aria-label="101sec website" target="_blank" rel="noopener noreferrer" href="https://101sec.net/cyber">Go to 101sec.net</a></p>
                                                 </div>
                                             </div>
                                             <div className="col-md-5 order-md-1">
-                                                <StaticImage width={1024} height={768} className="img-fluid main-rounded-start-lg" src="../img/mc_lobby.jpg" alt="101sec Network lobby" />
+                                                <StaticImage width={1024} height={768} className="img-fluid main-rounded-start-lg" src="../img/cpxiii_nats_101sec.jpg" alt="101sec CyberPatriot XIII National Finals team" />
                                             </div>
                                         </div>
                                     </div>
@@ -158,7 +159,7 @@ class Home extends React.Component {
                                                 </div>
                                             </div>
                                             <div className="col-md-5">
-                                                <StaticImage width={1024} height={768} className="img-fluid main-rounded-end-lg" src="../img/frc_2019_champs.jpg" alt="FRC 2019 World Championship" />
+                                                <StaticImage width={1024} height={768} className="img-fluid main-rounded-end-lg" src="../img/frc_2019_champs.jpg" alt="WildStang at FRC 2019 World Championship" />
                                             </div>
                                         </div>
                                     </div>
@@ -185,6 +186,7 @@ class Home extends React.Component {
                                 </div>
                                 <RevealAnimation animationClass="main-fade-in-animation">
                                     <ul>
+                                        <li><a aria-label="CVE-2021-42109 on NVD" target="_blank" rel="noopener noreferrer" href="https://nvd.nist.gov/vuln/detail/CVE-2021-42109">CVE-2021-42109</a></li>
                                         <li><a aria-label="CP-XIII National Finals program" target="_blank" rel="noopener noreferrer" href="https://www.uscyberpatriot.org/Documents/CP-XIII%20National%20Finals%20Program.pdf">CyberPatriot National Finalist</a></li>
                                         <li><a aria-label="National Cyber Scholarship website" target="_blank" rel="noopener noreferrer" href="https://www.nationalcyberscholarship.org/winners-2021#block-yui_3_17_2_1_1620649009028_757451">National Cyber Scholar with Honor</a></li>
                                     </ul>
@@ -252,23 +254,33 @@ class Home extends React.Component {
                                             <tr><td>FAUST CTF 2021</td><td>32 / 77</td><td>Applied Cybersecurity Society</td></tr>
                                             <tr><td>HSCTF 8</td><td>13 / 1162</td><td>icypete</td></tr>
                                             <tr><td>redpwnCTF 2021</td><td>3 / 1416</td><td>OpeOnlyOverflows</td></tr>
-                                            <tr><td>UIUCTF 2021</td><td>Challenge Dev</td><td>SIGPwny</td></tr>
+                                            <tr><td>UIUCTF 2021</td><td>Organizer</td><td>SIGPwny</td></tr>
                                             <tr><td>CSAW '21 Qualifiers</td><td>2 / 1214</td><td>SIGPwny</td></tr>
                                             <tr><td>PBjar CTF 2021</td><td>11 / 560</td><td>[sqrt(-1) + 1]</td></tr>
                                             <tr><td>Aviation ISAC Collegiate CTF</td><td>8 / 22</td><td>IrisSec</td></tr>
                                             <tr><td>pbctf 2021</td><td>26 / 210</td><td>IrisSec</td></tr>
-                                            <tr><td>NCL Fall 2021 Preseason</td><td>2 / 6423</td><td>Minh@UIUC</td></tr>
+                                            <tr><td>NCL Fall 2021 Preseason</td><td>2 / 6506</td><td>Minh@UIUC</td></tr>
+                                            <tr><td>SIGPwny Fall CTF 2021</td><td>Organizer</td><td>SIGPwny</td></tr>
+                                            <tr><td>NCL Fall 2021 Individual Game</td><td>103 / 6475</td><td>White</td></tr>
+                                            <tr><td>MetaCTF Campus Party Canada CTF 2021</td><td>5 / 28</td><td>WhiteHoodHacker</td></tr>
+                                            <tr><td>NCL Fall 2021 Team Game</td><td>8 / 3910</td><td>TNTECH</td></tr>
+                                            <tr><td>CPTC 2021 Western Regional</td><td>N/A</td><td>UIUC</td></tr>
+                                            <tr><td>MetaCTF CyberGames 2021</td><td>4 / 1343</td><td>SIGPwny</td></tr>
+                                            <tr><td>Dragon CTF 2021</td><td>50 / 247</td><td>SIGPwny</td></tr>
+                                            <tr><td>MetaRed International CTF 2021 - 5th Stage</td><td>4 / 144</td><td>SIGPwny</td></tr>
+                                            <tr><td>Tracer FIRE 10 @ UIUC</td><td>1 / 13</td><td>table3</td></tr>
+                                            <tr><td>CyberSEED 2022</td><td>3 / 119</td><td>SIGPwny</td></tr>
+                                            <tr><td>PlaidCTF 2022</td><td>27 / 431</td><td>Cornfield Computer Crew</td></tr>
+                                            <tr><td>Wolverine Security Conference CTF 2022</td><td>3 / 516</td><td>SIGPwny</td></tr>
+                                            <tr><td>CrewCTF 2022</td><td>9 / 758</td><td>SIGPwny</td></tr>
+                                            <tr><td>b01lers CTF 2022</td><td>4 / 653</td><td>SIGPwny</td></tr>
+                                            <tr><td>CypherCon 2022 OSINT CTF</td><td>1 / 31</td><td>SIGPwny</td></tr>
+                                            <tr><td>ångstromCTF 2022</td><td>92 / 1180</td><td>SIGPwny</td></tr>
+                                            <tr><td>BYUCTF 2022</td><td>6 / 435</td><td>SIGPwny</td></tr>
+                                            <tr><td>DEF CON CTF Qualifier 2022</td><td>76 / 470</td><td>Cornfield Computer Crew</td></tr>
                                         </tbody>
                                     </table>
                                 </RevealAnimation>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section id="hobbies" className="container-fluid mb-5">
-                    <div className="container h-100">
-                        <div className="row justify-content-center">
-                            <div className="col-md-10">
                             </div>
                         </div>
                     </div>

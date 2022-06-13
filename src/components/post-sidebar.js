@@ -14,7 +14,7 @@ class PostSidebar extends React.Component {
         return(
             <ScrollTracker>
                 <div style={this.sidebarStyle}>
-                    <p>Written by <br /><strong>WhiteHoodHacker</strong></p>
+                    <p>Written by <br /><strong>Minh Duong</strong></p>
                     <p>Share this post!</p>
                     <ShareBanner shareUrl={this.props.shareUrl} />
                 </div>

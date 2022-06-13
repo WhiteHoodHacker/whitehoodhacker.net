@@ -26,7 +26,7 @@ In this post, I'll be explaining how I did it and how I evaded detection, as wel
 
 > This post is for educational purposes only. Do not perform similar activities without explicit permission.
 
-We prepared complete documentation of everything we did, including recommendations to remediate the vulnerabilities we discovered. We went a comprehensive 26-page penetration test report to the D214 tech team and worked with them to help secure their network.
+We prepared complete documentation of everything we did, including recommendations to remediate the vulnerabilities we discovered. We sent a comprehensive 26-page penetration test report to the D214 tech team and worked with them to help secure their network.
 
 With that said, what we did was very illegal, and other administrations may have pressed charges. We are grateful that the D214 administration was so understanding.
 

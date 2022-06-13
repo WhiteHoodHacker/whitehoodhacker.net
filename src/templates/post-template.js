@@ -51,9 +51,9 @@ const PostTemplate = ({ data, location }) => {
                     </div>
                     <div className="row justify-content-center">
                         <div className="col-md-10 col-xl-8">
-                            <p>Published {post.frontmatter.date}, by <strong>WhiteHoodHacker</strong>.</p>
+                            <p>Published {post.frontmatter.date}. Written by <strong>Minh Duong</strong>.</p>
                             <SubscribeForm />
-                            <p>If you enjoyed the post, consider sharing it!</p>
+                            <p>If you enjoyed this post, please consider sharing it!</p>
                             <ShareBanner shareUrl={postUrl} />
                             <hr />
                             <PostFooter />

@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: `WhiteHoodHacker`,
-        description: `I am a security researcher studying computer science at University of Illinois Urbana-Champaign.`,
+        description: `I am a security researcher studying Computer Science at University of Illinois Urbana-Champaign.`,
         social: {
             twitter: `WhiteHoodHacker`,
         },
