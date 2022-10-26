@@ -21,7 +21,7 @@ class Home extends React.Component {
                                 <h1 className="main-reveal-text-short">Hi, I'm Minh.<br />I do cybersecurity.</h1>
                                 <div className="main-fade-in-animation">
                                     <p>I'm a 19 year old security researcher studying Computer Science at the University of Illinois at Urbana-Champaign.</p>
-                                    <p>In my free time, I play CTFs and code random things.</p>
+                                    <p>In my free time, I play CTFs and dance games.</p>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-4 col-sm-7 col-8">
@@ -44,10 +44,7 @@ class Home extends React.Component {
                         <div className="row justify-content-center">
                             <div className="col-md-10 ">
                                 <RevealAnimation animationClass="main-reveal-text">
-                                    <h1>Here are my certifications.</h1>
-                                </RevealAnimation>
-                                <RevealAnimation animationClass="main-reveal-text-reverse">
-                                    <p>I am committed to reaching the highest standards and pushing the limits of my knowledge.</p>
+                                    <h1>Certifications</h1>
                                 </RevealAnimation>
                             </div>
                         </div>
@@ -102,79 +99,9 @@ class Home extends React.Component {
                             <div className="col-md-10">
                                 <div className="d-inline-block">
                                     <RevealAnimation animationClass="main-reveal-text">
-                                        <h1>Below are some of my experiences.</h1>
+                                        <h1>Experiences</h1>
                                     </RevealAnimation>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="row justify-content-center mb-4">
-                            <div className="col-md-10">
-                                <RevealAnimation animationClass="main-fade-in-animation">
-                                    <div className="card main-box main-color-surface">
-                                        <div className="row align-items-center justify-content-center g-0">
-                                            <div className="col-md-7">
-                                                <div className="card-body">
-                                                    <p className="h5 card-title">SIGPwny</p>
-                                                    <p className="card-text m-0">I'm humbled to be one of the club admins for SIGPwny (the Special Interest Group for Information Security at UIUC). I help run our weekly presentations, organize events and socials, and play CTFs with my talented peers! We also run <a aria-label="UIUCTF on CTFtime" target="_blank" rel="noopener noreferrer" href="https://ctftime.org/ctf/95">UIUCTF</a> in the summer!</p>
-                                                    <p className="card-text m-0"><a aria-label="SIGPwny website" target="_blank" rel="noopener noreferrer" href="https://sigpwny.com/">Go to sigpwny.com</a></p>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-5">
-                                                <StaticImage width={1024} height={768} className="img-fluid main-rounded-end-lg" src="../img/sigpwny_cyphercon_2022.jpg" alt="SIGPwny at CypherCon 2022" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </RevealAnimation>
-                            </div>
-                        </div>
-                        <div className="row justify-content-center mb-4">
-                            <div className="col-md-10">
-                                <RevealAnimation animationClass="main-fade-in-animation">
-                                    <div className="card main-box main-color-surface">
-                                        <div className="row align-items-center justify-content-center g-0">
-                                            <div className="col-md-7 order-md-2">
-                                                <div className="card-body">
-                                                    <p className="h5 card-title">101sec Cyber Team</p>
-                                                    <p className="card-text">During high school, I established 101sec as a student-led program with the mission to make infosec engaging for students. I helped organize events, recruit new members, and educate others about cybersecurity. Today, I continue to mentor the team.</p>
-                                                    <p className="card-text m-0"><a aria-label="101sec website" target="_blank" rel="noopener noreferrer" href="https://101sec.net/cyber">Go to 101sec.net</a></p>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-5 order-md-1">
-                                                <StaticImage width={1024} height={768} className="img-fluid main-rounded-start-lg" src="../img/cpxiii_nats_101sec.jpg" alt="101sec CyberPatriot XIII National Finals team" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </RevealAnimation>
-                            </div>
-                        </div>
-                        <div className="row justify-content-center mb-4">
-                            <div className="col-md-10">
-                                <RevealAnimation animationClass="main-fade-in-animation">
-                                    <div className="card main-box main-color-surface">
-                                        <div className="row align-items-center justify-content-center g-0">
-                                            <div className="col-md-7">
-                                                <div className="card-body">
-                                                    <p className="h5 card-title">FIRST Robotics</p>
-                                                    <p className="card-text">I'm proud to have competed in FIRST robotics for over eight years and I'm honored to be a part of FIRST alumni. During my time with <a target="_blank" rel="noopener noreferrer" href="http://www.wildstang.org/ws_wp/">WildStang</a> (FRC 111), I worked heavily with Java using a custom framework to program functions for the robot. I also developed strong communication and teamwork skills.</p>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-5">
-                                                <StaticImage width={1024} height={768} className="img-fluid main-rounded-end-lg" src="../img/frc_2019_champs.jpg" alt="WildStang at FRC 2019 World Championship" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </RevealAnimation>
-                            </div>
-                        </div>
-                        <div className="row justify-content-center mb-4">
-                            <div className="col-lg-10 text-center">
-                                <RevealAnimation animationClass="main-fade-in-animation">
-                                    <FrcBanner awardName="Winner" eventName="2019 Midwest Regional" />
-                                    <FrcBanner awardName="Winner" eventName="2019 Seven Rivers Regional" />
-                                    <div className="w-100 d-md-none d-block"></div>
-                                    <FrcBanner awardName="Winner" eventName="2019 Carson Division" />
-                                    <FrcBanner awardName="Skills Competition Winner" eventName="2021 Krypton Group - Infinite Recharge at Home" isLong="true" />
-                                </RevealAnimation>
                             </div>
                         </div>
                         <div className="row justify-content-center">
@@ -186,6 +113,7 @@ class Home extends React.Component {
                                 </div>
                                 <RevealAnimation animationClass="main-fade-in-animation">
                                     <ul>
+                                        <li><a aria-label="DEF CON 30 YouTube video" target="_blank" rel="noopener noreferrer" href="https://youtu.be/3PAauAy-Fb4">DEF CON 30 Speaker</a></li>
                                         <li><a aria-label="CVE-2021-42109 on NVD" target="_blank" rel="noopener noreferrer" href="https://nvd.nist.gov/vuln/detail/CVE-2021-42109">CVE-2021-42109</a></li>
                                         <li><a aria-label="CP-XIII National Finals program" target="_blank" rel="noopener noreferrer" href="https://www.uscyberpatriot.org/Documents/CP-XIII%20National%20Finals%20Program.pdf">CyberPatriot National Finalist</a></li>
                                         <li><a aria-label="National Cyber Scholarship website" target="_blank" rel="noopener noreferrer" href="https://www.nationalcyberscholarship.org/winners-2021#block-yui_3_17_2_1_1620649009028_757451">National Cyber Scholar with Honor</a></li>
@@ -294,7 +222,7 @@ class Home extends React.Component {
                                         <div id="mc_embed_signup_scroll" className="form-group">
                                             <div className="d-inline-block">
                                                 <RevealAnimation animationClass="main-reveal-text">
-                                                    <h1><label htmlFor="mce-EMAIL">Let's stay in touch.</label></h1>
+                                                    <h1><label htmlFor="mce-EMAIL">Let's stay in touch!</label></h1>
                                                 </RevealAnimation>
                                             </div>
                                             <br />
