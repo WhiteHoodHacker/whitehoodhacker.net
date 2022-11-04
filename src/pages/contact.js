@@ -17,22 +17,12 @@ class Contact extends React.Component {
                 <h1 className="main-reveal-text-short mt-0">Contact</h1>
                 <div className="main-fade-in-animation">
                   <p>
-                    You can send me an email at 
-                    <code class="language-text">
-                      hello at whitehoodhacker dot net
-                    </code>.
+                    You can send me an email at <code class="language-text">hello at whitehoodhacker dot net</code>.
                   </p>
                   <p>
-                    Here is my 
-                    <a aria-label="PGP key" href="/WhiteHoodHacker.asc">
-                      PGP key
-                    </a>
-                    if you wish to communicate using encryption.
+                    Here is my <a aria-label="PGP key" href="/WhiteHoodHacker.asc">PGP key</a> if you wish to communicate using encryption.
                     <br />
-                    Fingerprint: 
-                    <code class="language-text">
-                      2019 FF0E 9A1B 845E 1614  EEDA DB2F 2FBF 62B4 9461
-                    </code>
+                    Fingerprint: <code class="language-text">2019 FF0E 9A1B 845E 1614  EEDA DB2F 2FBF 62B4 9461</code>
                   </p>
                   <p>
                     For verification purposes, my Discord tag is <a target="_blank" rel="noopener noreferrer" href="https://discord.com/users/387289660675588098">WhiteHoodHacker#0010</a>, but I don't accept requests from strangers. Please contact me by email instead.
