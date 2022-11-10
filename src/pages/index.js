@@ -12,6 +12,7 @@ class Home extends React.Component {
     render() {
         return (
             <div className="main-page h-100">
+                <a rel="me" href="https://infosec.exchange/@whitehoodhacker">Mastodon</a>
                 <Seo title="Home" />
                 <section id="intro" className="container-fluid main-mh-100 mb-5">
                     <NavigationSpacer />
