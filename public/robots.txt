@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /wp-admin/
+Sitemap: https://whitehoodhacker.net/sitemap-index.xml
+
+User-agent: nsa
+Disallow: /

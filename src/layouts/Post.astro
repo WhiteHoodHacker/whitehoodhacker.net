@@ -1,0 +1,144 @@
+---
+import BaseHead from '@/components/BaseHead.astro';
+import Navigation from '@/components/Navigation.astro';
+import Footer from '@/components/Footer.astro';
+import ShareBanner from '@/components/ShareBanner.astro';
+import SubscribeForm from '@/components/SubscribeForm.astro';
+import Comments from '@/components/Comments.astro';
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  date: Date;
+  author: string;
+  slug: string;
+  minutesRead?: number;
+  previousPost?: { slug: string; title: string } | null;
+  nextPost?: { slug: string; title: string } | null;
+}
+
+const {
+  title,
+  description,
+  image,
+  date,
+  author,
+  slug,
+  minutesRead,
+  previousPost,
+  nextPost,
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') || '';
+const postUrl = `${siteUrl}/${slug}`;
+const titleTransitionName = `post-title-${slug.replace(/[^a-zA-Z0-9_-]/g, '-')}`;
+const formattedDate = date.toISOString().slice(0, 10);
+---
+
+<!doctype html>
+<html lang="en" transition:animate="none">
+  <head>
+    <BaseHead title={title} description={description} image={image} />
+    <ClientRouter fallback="swap" />
+  </head>
+  <body>
+    <Navigation />
+    <div class="container-page flex-1">
+      <div class="flex justify-center">
+        <!-- Sidebar (desktop only) -->
+        <aside class="hidden xl:block w-48 shrink-0">
+          <div class="sticky top-24 -ml-8 opacity-0 transition-opacity duration-200" id="post-sidebar">
+            <p>Share this post!</p>
+            <ShareBanner shareUrl={postUrl} />
+          </div>
+        </aside>
+
+        <!-- Main content -->
+        <div class="max-w-3xl w-full">
+          <p class="m-0 animate-fade-in">
+            <a href="/posts"><strong>&larr; ../</strong></a>
+          </p>
+
+          <article id="post-content" itemscope itemtype="http://schema.org/Article">
+            <header>
+              <h1 itemprop="headline">
+                <span class="inline-block" transition:name={titleTransitionName} transition:animate="initial">{title}</span>
+              </h1>
+              <p class="reveal-text-short inline-block">
+                {formattedDate}
+                {minutesRead && <>&nbsp;&bull;&nbsp;{minutesRead} min read</>}
+              </p>
+            </header>
+
+            <section itemprop="articleBody" class="animate-fade-in">
+              <slot />
+            </section>
+
+            <hr />
+          </article>
+
+          <p>Published {formattedDate}. Written by <strong>{author}</strong>.</p>
+
+          <SubscribeForm />
+
+          <p>If you enjoyed this post, please consider sharing it!</p>
+          <ShareBanner shareUrl={postUrl} />
+
+          <hr />
+
+          <Comments />
+
+          <hr />
+
+          <!-- Previous/Next navigation -->
+          <nav class="flex justify-between mb-12 gap-4">
+            <div class="text-left">
+              {nextPost && (
+                <>
+                  <p class="m-0">&larr; Newer</p>
+                  <a href={`/${nextPost.slug}`}>{nextPost.title}</a>
+                </>
+              )}
+            </div>
+            <div class="text-right">
+              {previousPost && (
+                <>
+                  <p class="m-0">Older &rarr;</p>
+                  <a href={`/${previousPost.slug}`}>{previousPost.title}</a>
+                </>
+              )}
+            </div>
+          </nav>
+        </div>
+
+        <!-- Right spacer for symmetry -->
+        <div class="hidden xl:block w-48 shrink-0"></div>
+      </div>
+    </div>
+    <Footer />
+
+    <script is:inline>
+      function initPostSidebar() {
+        const sidebar = document.getElementById('post-sidebar');
+        const postContent = document.getElementById('post-content');
+        if (!sidebar || !postContent) return;
+
+        function updateSidebar() {
+          const scrollY = window.scrollY;
+          const viewportHeight = window.innerHeight;
+          const contentBottom = postContent.offsetTop + postContent.offsetHeight;
+          const hidden = scrollY < 400 || (scrollY + viewportHeight) > contentBottom;
+          sidebar.style.opacity = hidden ? '0' : '1';
+        }
+
+        window.addEventListener('scroll', updateSidebar, { passive: true });
+        updateSidebar();
+      }
+
+      initPostSidebar();
+      document.addEventListener('astro:after-swap', initPostSidebar);
+    </script>
+  </body>
+</html>

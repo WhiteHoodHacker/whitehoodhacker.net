@@ -1,0 +1,35 @@
+---
+/**
+ * ScrollReveal: Lightweight scroll-triggered reveal animations.
+ * Add the `data-reveal` attribute to any element inside this component's slot.
+ * The script uses IntersectionObserver to add the `.visible` class when elements enter view.
+ */
+---
+
+<slot />
+
+<script is:inline>
+  function initScrollReveal() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+      observer.observe(el);
+    });
+  }
+
+  // Initialize on page load
+  initScrollReveal();
+
+  // Re-initialize after view transitions
+  document.addEventListener('astro:after-swap', initScrollReveal);
+</script>

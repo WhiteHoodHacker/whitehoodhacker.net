@@ -1,0 +1,47 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import Post from '@/layouts/Post.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  const sortedPosts = posts.sort(
+    (a, b) => a.data.date.getTime() - b.data.date.getTime()
+  );
+
+  return sortedPosts.map((post, index) => {
+    const previousPost = index > 0
+      ? { slug: sortedPosts[index - 1].data.slug, title: sortedPosts[index - 1].data.title }
+      : null;
+    const nextPost = index < sortedPosts.length - 1
+      ? { slug: sortedPosts[index + 1].data.slug, title: sortedPosts[index + 1].data.title }
+      : null;
+
+    return {
+      params: { slug: post.data.slug },
+      props: { post, previousPost, nextPost },
+    };
+  });
+}
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+  previousPost: { slug: string; title: string } | null;
+  nextPost: { slug: string; title: string } | null;
+}
+
+const { post, previousPost, nextPost } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Post
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.image}
+  date={post.data.date}
+  author={post.data.author}
+  slug={post.data.slug}
+  previousPost={previousPost}
+  nextPost={nextPost}
+>
+  <Content />
+</Post>

@@ -1,0 +1,44 @@
+---
+import icon96 from '@/assets/img/icon96.png';
+import DarkModeToggle from './DarkModeToggle.astro';
+import { Image } from 'astro:assets';
+
+const navLinks = [
+  { href: '/', label: '/home' },
+  { href: '/posts', label: '/posts' },
+  { href: '/contact', label: '/contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<div class="container-page py-8">
+  <nav class="flex flex-col md:flex-row items-start md:items-center gap-2 z-50">
+    <a href="/" class="flex items-center gap-3 no-underline" transition:persist="nav-brand">
+      <Image
+        src={icon96}
+        alt="Icon"
+        width={48}
+        height={48}
+        class="rounded-full"
+      />
+      <span class="font-bold text-[var(--color-title)] text-lg">WhiteHoodHacker</span>
+    </a>
+    <div class="flex items-center gap-0">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'px-2 py-1 transition-colors',
+            currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
+              ? 'text-[var(--color-primary)] font-bold'
+              : '',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+      <DarkModeToggle />
+    </div>
+  </nav>
+</div>

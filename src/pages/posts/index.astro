@@ -1,0 +1,50 @@
+---
+import Base from '@/layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+const sortedPosts = posts.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<Base title="Posts" description="See and read all posts from WhiteHoodHacker. I promise I'm not that boring.">
+  {sortedPosts.length === 0 ? (
+    <p class="reveal-text-short inline-block">Oops, there are no posts... yet :p</p>
+  ) : (
+    <ol class="list-none p-0">
+      {sortedPosts.map((post) => {
+        const formattedDate = post.data.date.toISOString().slice(0, 10);
+
+        return (
+          <li class="mb-8">
+            <article itemscope itemtype="http://schema.org/Article">
+              <header>
+                <h2 class="mb-1">
+                  <a href={`/${post.data.slug}`} itemprop="url" class="reveal-text-short inline-block font-bold">
+                    <span
+                      itemprop="headline"
+                      class="inline-block"
+                      transition:name={`post-title-${post.data.slug.replace(/[^a-zA-Z0-9_-]/g, '-')}`}
+                      transition:animate="initial"
+                    >
+                      {post.data.title}
+                    </span>
+                  </a>
+                </h2>
+              </header>
+              <div class="animate-fade-in">
+                <small class="text-[var(--color-text)] opacity-70">
+                  {formattedDate}
+                </small>
+                <p itemprop="description" class="mt-1">
+                  {post.data.description}
+                </p>
+              </div>
+            </article>
+          </li>
+        );
+      })}
+    </ol>
+  )}
+</Base>

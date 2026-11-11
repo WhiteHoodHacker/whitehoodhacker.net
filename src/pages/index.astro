@@ -1,0 +1,80 @@
+---
+import Base from '@/layouts/Base.astro';
+import ScrollReveal from '@/components/ScrollReveal.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+import portraitSpray from '@/assets/img/portrait-spray.jpg';
+
+const posts = await getCollection('posts');
+const sortedPosts = posts.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+const latestPost = sortedPosts[0];
+---
+
+<Base title="Home">
+  <ScrollReveal>
+    <!-- Hero Section -->
+    <section class="mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center">
+        <div>
+          <h1 class="reveal-text-short">Hi, I'm Minh.<br />I do cybersecurity.</h1>
+          <div class="animate-fade-in">
+            <p>I'm a security researcher at Microsoft and an alum of the University of Illinois Urbana-Champaign, where I completed the combined MCS-BS program, earning a Master of Computer Science and a Bachelor of Science in Computer Science.</p>
+          </div>
+        </div>
+        <div class="w-48 sm:w-56 md:w-64 mx-auto md:mx-0 animate-fade-in-delay-1">
+          <Image
+            src={portraitSpray}
+            alt="Portrait"
+            width={300}
+            height={300}
+            class="rounded-full w-full h-auto"
+          />
+        </div>
+      </div>
+
+      {latestPost && (
+        <div class="mt-8 md:max-w-lg animate-fade-in-delay-2">
+          <div class="content-box">
+            <p class="text-lg font-bold mb-1">Latest post:</p>
+            <a href={`/${latestPost.data.slug}`}>{latestPost.data.title}</a>
+            <p class="text-sm mt-1">{latestPost.data.description}</p>
+          </div>
+        </div>
+      )}
+    </section>
+
+    <!-- Subscribe -->
+    <section class="mb-12 text-center">
+      <div data-reveal>
+        <h1 class="reveal-text inline-block">Let's stay in touch!</h1>
+      </div>
+      <div data-reveal class="max-w-md mx-auto">
+        <form
+          action="https://gmail.us5.list-manage.com/subscribe/post?u=602886b7ffa91c629bc8d12a5&amp;id=3774b743fb"
+          method="post"
+          name="mc-embedded-subscribe-form"
+          target="_blank"
+        >
+          <div class="flex gap-2 justify-center">
+            <input
+              type="email"
+              name="EMAIL"
+              id="mce-EMAIL"
+              placeholder="hello@example.com"
+              required
+              class="flex-1 min-w-[200px]"
+            />
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_602886b7ffa91c629bc8d12a5_3774b743fb" tabindex="-1" value="" />
+            </div>
+            <input type="submit" value="Subscribe" name="subscribe" class="btn-primary" />
+          </div>
+          <small class="italic">You will only be notified of new posts. I don't spam.</small>
+        </form>
+      </div>
+    </section>
+  </ScrollReveal>
+</Base>

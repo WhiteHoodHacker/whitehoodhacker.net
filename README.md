@@ -1,31 +1,34 @@
 # [WhiteHoodHacker.net](https://whitehoodhacker.net)
 
-This website uses GatsbyJS, a static site generator based on the ReactJS framework. I chose GatsbyJS because it offered the flexibility of React without sacrificing speed and SEO.
+My personal website and blog, built with Astro, Tailwind CSS, and Markdown/MDX.
 
-I developed this website entirely from scratch, although most of the blog post generation was taken from [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog). Posts are generated from markdown and MDX files located in the `contents/posts` directory.
+## Requirements
 
-This website also uses Bootstrap 5.0, mainly for the grid system and a few visual components. Most of the visual styles are custom made (including the fancy animations). These styles can be found in `main.css`.
+- Node.js 22 or newer
+- npm
 
-Page routing is a little bit wonky since I'm using Cloudflare Pages. See this [commit](https://github.com/WhiteHoodHacker/whitehoodhacker.net/commit/d3ebecf71a91b7657abfced4d1956053141dcd46) for more details.
+## Development
 
-## Quick Start
-
-Make sure all dependences are installed:
-
-```
+```sh
 npm install
+npm run dev
 ```
 
-To start development, run:
+The development server runs at `http://localhost:4321`.
 
-```
-gatsby develop
+## Content
+
+Posts live in `content/posts/`, with each post's Markdown or MDX file and media
+in the same directory. Images and other static files live in `public/` and
+`src/assets/`.
+
+## Check and Build
+
+```sh
+npm run check
+npm run build
+npm run preview
 ```
 
-To build the site and serve it, run:
-
-```
-gatsby build && gatsby serve
-```
-
-The built static site will be generated in the `public` folder.
+The static site is generated in `dist/`. GitHub Actions checks and builds pull
+requests, and deploys `main` to Cloudflare Pages.

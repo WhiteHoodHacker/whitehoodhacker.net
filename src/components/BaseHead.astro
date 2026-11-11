@@ -1,0 +1,97 @@
+---
+import '../styles/main.css';
+import { Font } from 'astro:assets';
+import { SITE_TITLE, SITE_IMAGE, SOCIAL_TWITTER } from '@/consts';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { title, description = '', image } = Astro.props;
+
+const fullTitle = `${title} | ${SITE_TITLE}`;
+const metaImage = image || SITE_IMAGE;
+const twitterCardType = image ? 'summary_large_image' : 'summary';
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" type="image/x-icon" sizes="48x48" href="/favicon.ico" />
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/icon180.png" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={new URL('rss.xml', Astro.site)} />
+<meta name="generator" content={Astro.generator} />
+
+<Font cssVariable="--font-inconsolata" preload />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={description} />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#f8f9fa" />
+<meta name="format-detection" content="telephone=no" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content={SITE_TITLE} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={metaImage} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content={twitterCardType} />
+<meta name="twitter:site" content={`@${SOCIAL_TWITTER}`} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={metaImage} />
+
+<!-- Dark mode: prevent FOUC -->
+<script is:inline>
+  (function () {
+    var preference = null;
+    try {
+      preference = localStorage.getItem('theme');
+    } catch (_) {
+    }
+    var systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function isDark() {
+      return preference === 'dark' || (preference !== 'light' && systemTheme.matches);
+    }
+
+    function applyTheme(doc) {
+      var dark = isDark();
+      doc.documentElement.classList.toggle('dark', dark);
+      doc.querySelector('meta[name="theme-color"]').content = dark ? '#111111' : '#f8f9fa';
+      if (doc === document) {
+        document.dispatchEvent(new Event('site:theme-applied'));
+      }
+    }
+
+    applyTheme(document);
+    document.addEventListener('astro:before-swap', function (e) {
+      applyTheme(e.newDocument);
+    });
+    document.addEventListener('site:theme-toggle', function () {
+      preference = isDark() ? 'light' : 'dark';
+      try {
+        localStorage.setItem('theme', preference);
+      } catch (_) {}
+      applyTheme(document);
+    });
+    systemTheme.addEventListener('change', function () {
+      applyTheme(document);
+    });
+  })();
+</script>
